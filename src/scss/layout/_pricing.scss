@@ -1,0 +1,146 @@
+// Секция «Стоимость доработки сайта»
+.pricing {
+  text-align: center;
+  background-color: $palette-off-white;
+  &__title {
+    margin-bottom: 56px;
+    text-transform: uppercase;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    align-items: stretch;
+    text-align: left;
+
+    @media (max-width: 1100px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 700px) {
+      grid-template-columns: 1fr;
+      max-width: 480px;
+      margin-inline: auto;
+    }
+  }
+
+  // тёмная карточка "Бесплатный аудит" — четвёртая в сетке
+  &__audit {
+    display: flex;
+    flex-direction: column;
+    background: $palette-black;
+    color: $palette-white;
+    border-radius: 20px;
+    padding: 28px 24px;
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("../img/audit-form-bg.webp");
+      background-size: cover;
+      background-repeat: no-repeat;
+      pointer-events: none;
+      z-index: 0;
+    }
+  }
+
+  &__audit-title {
+    position: relative;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  &__audit-text {
+    position: relative;
+    font-weight: 500;
+    color: white;
+  }
+
+
+  &__audit-btn {
+    position: relative;
+    width: 100%;
+    margin-top: auto;
+  }
+}
+
+.price-card {
+  display: flex;
+  flex-direction: column;
+  background: $palette-white;
+  border-radius: 20px;
+  padding: 28px 24px;
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: $palette-off-white;
+    border-radius: 12px;
+    padding: 10px 16px;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  &__name {
+  }
+
+  &__badge {
+    color: $palette-blue;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  &__lead {
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  &__inherit {
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+
+  &__list {
+    list-style: none;
+    margin-bottom: 24px;
+
+    li {
+      font-weight: 500;
+      padding-left: 16px;
+      position: relative;
+      margin-bottom: 8px;
+
+      &::before {
+        content: '•';
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+
+  &__note {
+    font-size: 14px;
+    font-weight: 400;
+    color: $palette-gray-dark;
+    border-top: 1px solid $palette-lavender-light;
+    padding-top: 24px;
+    margin-top: auto;
+    margin-bottom: 24px;
+  }
+
+  &__price {
+    font-family: $font-heading;
+    font-size: 24px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+}

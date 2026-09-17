@@ -1,0 +1,308 @@
+// Секция FAQ
+.faq {
+  text-align: center;
+
+  &__title {
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    font-size: 15px;
+    color: $palette-gray;
+    margin-bottom: 48px;
+  }
+
+  &__list {
+    max-width: 820px;
+    margin: 0 auto;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+}
+
+.faq-item {
+  border: 1px solid $palette-lavender-light;
+  border-radius: 20px;
+  padding: 20px 24px;
+  transition: border-color 0.2s ease;
+
+  &[open] {
+    border-color: $palette-blue;
+
+    .faq-item__icon::after {
+      content: "−";
+    }
+  }
+
+  &__question {
+    list-style: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: $palette-off-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: $palette-blue;
+
+    &::after {
+      content: "+";
+    }
+  }
+
+  &__answer {
+    font-size: 14px;
+    line-height: 1.6;
+    color: $palette-gray-dark;
+    padding-top: 14px;
+  }
+}
+
+// Секция формы заявки (две белые карточки на светлом фоне)
+.request {
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    gap: 24px;
+    align-items: start;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: 30px;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: $palette-gray-dark;
+    margin-bottom: 20px;
+  }
+
+  &__includes {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  &__list {
+    list-style: none;
+    margin-bottom: 24px;
+
+    li {
+      font-size: 13px;
+      line-height: 1.5;
+      color: $palette-gray-dark;
+      padding-left: 16px;
+      position: relative;
+      margin-bottom: 10px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 7px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: $palette-black;
+      }
+    }
+  }
+
+  &__note-top {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  &__socials {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__social {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: 44px;
+    height: 44px;
+    border: 1px solid $palette-lavender-light;
+    border-radius: 12px;
+    justify-content: center;
+    transition: border-color 0.2s ease, color 0.2s ease;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    &--wide {
+      width: auto;
+      padding-inline: 16px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    &:hover {
+      border-color: $palette-blue;
+      color: $palette-blue;
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  &__tab {
+    padding: 10px 20px;
+    border-radius: 100px;
+    border: none;
+    background: $palette-off-white;
+    font-family: $font-main;
+    font-size: 13px;
+    font-weight: 500;
+    color: $palette-black;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: $palette-lavender-light;
+    }
+
+    &.is-active {
+      background: $palette-black;
+      color: $palette-white;
+    }
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__label {
+    font-size: 13px;
+    font-weight: 500;
+
+    span {
+      color: #d92d20;
+    }
+  }
+
+  &__consent {
+    display: flex;
+    gap: 10px;
+    font-size: 11px;
+    line-height: 1.5;
+    color: $palette-gray;
+    cursor: pointer;
+
+    input {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      accent-color: $palette-gray-dark;
+      cursor: pointer;
+    }
+
+    a {
+      color: $palette-blue;
+      text-decoration: underline;
+    }
+  }
+
+  &__submit {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.request-card {
+  background: $palette-white;
+  border-radius: 28px;
+  padding: 36px 32px;
+
+  @media (max-width: 576px) {
+    padding: 24px 20px;
+  }
+
+  input[type='text'],
+  input[type='tel'],
+  input[type='url'],
+  input[type='email'],
+  textarea {
+    width: 100%;
+    padding: 13px 16px;
+    border-radius: 12px;
+    border: 1px solid $palette-lavender-light;
+    background: $palette-white;
+    color: $palette-black;
+    font-family: $font-main;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease;
+
+    &::placeholder {
+      color: $palette-gray-light;
+    }
+
+    &:focus {
+      border-color: $palette-blue;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 110px;
+  }
+}

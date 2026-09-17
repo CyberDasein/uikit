@@ -1,0 +1,13 @@
+.container {
+  max-width: $container-max + $container-pad * 2;
+  margin-inline: auto;
+  padding-inline: $container-pad;
+}
+.container-small {
+  max-width: $container-small-max;
+  margin-inline: auto;
+  padding-inline: $container-pad;
+  @include mq($bp-tablet) {
+    padding-inline: 0;
+  }
+}

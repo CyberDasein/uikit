@@ -1,0 +1,873 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UI KIT</title>
+  <link rel="stylesheet" href="/scss/main.scss" />
+</head>
+
+<body>
+  <!-- header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="/" class="header__logo">
+        <img src="./img/logo.svg" alt="Logo" />
+      </a>
+      <nav class="nav">
+        <a href="#about">Что мы решаем</a>
+        <a href="#services">Ошибки сайта</a>
+        <a href="#contacts">Этапы работы</a>
+        <a href="#contacts">Почему мы</a>
+        <a href="#contacts">Стоимость</a>
+        <a href="#contacts">Вопросы</a>
+      </nav>
+      <button class="btn btn--primary">Оставить заявку</button>
+    </div>
+  </header>
+
+  <!-- hero -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero__title">
+        Исправляем сайты: Делаем их быстрее, красивее и удобнее
+      </h1>
+      <p class="hero__subtitle">
+        Исправляем ошибки, ускоряем загрузку, делаем интерфейс удобным, <br />
+        современным и привлекательным, Чтобы принести вашему сайту больше
+        заявок.
+      </p>
+      <button class="btn btn--primary">Оставить заявку</button>
+      <button class="btn btn--outline">Бесплатный аудит</button>
+    </div>
+    <div class="hero-animated-items">
+      <div class="hero-animated-item item-1">
+        <img src="./img/hero-item-1.webp" alt="" />
+      </div>
+      <div class="hero-animated-item item-2">
+        <img src="./img/hero-item-7.webp" alt="" />
+      </div>
+      <div class="hero-animated-item item-3">
+        <img src="./img/hero-item-3.webp" alt="" />
+      </div>
+      <div class="hero-animated-item item-4">
+        <img src="./img/hero-item-6.webp" alt="" />
+      </div>
+      <div class="hero-animated-item item-5">
+        <img src="./img/hero-item-5.webp" alt="" />
+      </div>
+      <div class="hero-animated-item item-6">
+        <img src="./img/hero-item-4.webp" alt="" />
+      </div>
+      <div class="hero-animated-item item-7">
+        <img src="./img/hero-item-2.webp" alt="" />
+      </div>
+    </div>
+  </section>
+
+  <!-- problems -->
+  <section id="about" class="problems section">
+    <div class="container-small">
+      <h2 class="problems__title">Проблемы, которые мы решаем</h2>
+      <p class="problems__subtitle">
+        Бывает так: разработчик сдал проект, пропал со связи, а на сайте осталась куча недоделок. А может быть сайт
+        немного устарел. Ниже — самые частые «косяки», с которыми к нам приходят, и которые мы успешно исправляем.
+      </p>
+
+      <div class="problems__grid">
+        <div class="problem-card">
+          <div class="problem-card__tag">
+            <span>Ошибки верстки</span>
+            <img src="./img/Code.svg" alt="code">
+          </div>
+          <h3 class="problem-card__heading">Кривые блоки<br />и отступы</h3>
+          <ul class="problem-card__list">
+            <li>Элементы «прилипают» друг к другу или съезжают</li>
+            <li>Блоки с контентом имеют разную высоту</li>
+            <li>Сайт ломается или криво отображается на смартфонах</li>
+            <li>Кнопки и иконки не выровненны под один стиль</li>
+            <li>Смысловые блоки сайта сливаются друг с другом</li>
+          </ul>
+        </div>
+
+        <div class="problem-card">
+          <div class="problem-card__tag">
+            <span>Слабый UI/UX-дизайн</span>
+            <img src="./img/Image.svg" alt="design">
+          </div>
+          <h3 class="problem-card__heading">
+            Проблемы с визуалом<br />и стилем
+          </h3>
+          <ul class="problem-card__list">
+            <li>
+              Устаревшие баннеры, грязные градиенты и тяжёлые тени
+            </li>
+            <li>
+              Слишком много случайных цветов, которые спорят друг с другом
+            </li>
+            <li>Элементы интерфейса выглядят дёшево или неаккуратно</li>
+            <li>Стоковые изображения 2000–2010-х годов</li>
+            <li>Формы заявок и кнопки неудобно нажимать</li>
+            <li>Клиент не находит нужную информацию на сайте</li>
+          </ul>
+        </div>
+
+        <div class="problem-card">
+          <div class="problem-card__tag">
+            <span>Потери скорости загрузки</span>
+            <img src="./img/Loader.svg" alt="load">
+          </div>
+          <h3 class="problem-card__heading">Медленная работа<br />сайта</h3>
+          <ul class="problem-card__list">
+            <li>Сайт долго открывается на мобильном устройстве</li>
+            <li>Изображения весят слишком много и долго прогружаются</li>
+            <li>Код перегружен лишними скриптами и стилями</li>
+            <li>
+              Низкие показатели в Google PageSpeed (красная, оранжевая зона)
+            </li>
+          </ul>
+        </div>
+
+        <div class="problem-card">
+          <div class="problem-card__tag">
+            <span>Проблемы с текстом и читаемостью</span>
+            <img src="./img/TextT.svg" alt="text">
+          </div>
+          <h3 class="problem-card__heading">Плохой контент<br />и шрифты</h3>
+          <ul class="problem-card__list">
+            <li>Мелкий или сложный наборный шрифт, от которого устают глаза</li>
+            <li>Сплошные «стены текста» без абзацев, списков и отступов</li>
+            <li>Сложные, непонятные формулировки в описании услуг</li>
+            <li>Орфографические ошибки и старая, неактуальная информация</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- familiar / tabs -->
+  <section id="services" class="familiar section">
+    <div class="container">
+      <h2 class="familiar__title">Возможно, вам это знакомо</h2>
+      <p class="familiar__subtitle">
+        Сравните, как можно исправить ошибки и улучшить сайт
+      </p>
+
+      <div class="familiar__tabs" role="tablist">
+        <button class="familiar__tab is-active" role="tab" data-tab="0">
+          Длинный текст
+        </button>
+        <button class="familiar__tab" role="tab" data-tab="1">
+          Текст и фон
+        </button>
+        <button class="familiar__tab" role="tab" data-tab="2">
+          Отступы и сетки
+        </button>
+        <button class="familiar__tab" role="tab" data-tab="3">
+          Много текста
+        </button>
+        <button class="familiar__tab" role="tab" data-tab="4">
+          Неудобная форма заявок
+        </button>
+        <button class="familiar__tab" role="tab" data-tab="5">
+          Актуальный год
+        </button>
+        <button class="familiar__tab" role="tab" data-tab="6">
+          Устаревший дизайн
+        </button>
+        <button class="familiar__tab" role="tab" data-tab="7">
+          Отсутствие стиля
+        </button>
+        <button class="familiar__tab" role="tab" data-tab="8">
+          Меленькие иконки
+        </button>
+        <button class="familiar__tab" role="tab" data-tab="9">
+          Видео не грузится
+        </button>
+        <button class="familiar__tab" role="tab" data-tab="10">
+          Устаревший логотип
+        </button>
+      </div>
+
+      <div class="familiar__panels">
+        <div class="familiar-panel is-active" data-panel="0">
+          <div class="familiar-panel__content">
+            <h3 class="familiar-panel__heading">
+              Длинный<br />нечитаемый текст
+            </h3>
+            <p class="familiar-panel__text">
+              Огромные абзацы без структуры пугают пользователей, лишая вас возможности донести ценность предложения.
+              Попытка уместить всю информацию в одной карточке перегружает интерфейс, и клиент просто пролистывает блок
+              мимо.
+            </p>
+            <p class="familiar-panel__text">
+              Мы сократим лишнее, добавим абзацы, отступы и яркие акценты, чтобы превратить скучный массив букв в легкий
+              продающий анонс.
+            </p>
+          </div>
+          <div class="familiar-panel__compare">
+            <div class="familiar-compare">
+              <div class="familiar-compare__label familiar-compare__label--bad">
+                Плохо
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M11.668 2C9.69016 2 7.75676 2.58649 6.11227 3.6853C4.46778 4.78412 3.18605 6.3459 2.42918 8.17316C1.6723 10.0004 1.47427 12.0111 1.86012 13.9509C2.24597 15.8907 3.19838 17.6725 4.5969 19.0711C5.99543 20.4696 7.77726 21.422 9.71707 21.8078C11.6569 22.1937 13.6675 21.9957 15.4948 21.2388C17.3221 20.4819 18.8839 19.2002 19.9827 17.5557C21.0815 15.9112 21.668 13.9778 21.668 12C21.6652 9.34869 20.6107 6.80678 18.7359 4.93202C16.8612 3.05727 14.3193 2.0028 11.668 2ZM11.668 20.4615C9.99444 20.4615 8.35849 19.9653 6.96699 19.0355C5.5755 18.1057 4.49096 16.7842 3.85053 15.2381C3.2101 13.6919 3.04253 11.9906 3.36902 10.3492C3.69551 8.70786 4.50139 7.20016 5.68476 6.01679C6.86813 4.83342 8.37583 4.02754 10.0172 3.70105C11.6586 3.37456 13.3599 3.54212 14.9061 4.18256C16.4522 4.82299 17.7737 5.90753 18.7035 7.29902C19.6332 8.69051 20.1295 10.3265 20.1295 12C20.127 14.2434 19.2347 16.3941 17.6484 17.9804C16.0621 19.5667 13.9113 20.459 11.668 20.4615ZM7.05259 10.0769C7.05259 9.84871 7.12026 9.62563 7.24705 9.43588C7.37383 9.24613 7.55404 9.09824 7.76488 9.01091C7.97571 8.92357 8.20771 8.90072 8.43154 8.94525C8.65536 8.98977 8.86096 9.09966 9.02233 9.26103C9.18369 9.4224 9.29359 9.62799 9.33811 9.85182C9.38263 10.0756 9.35978 10.3076 9.27245 10.5185C9.18512 10.7293 9.03722 10.9095 8.84748 11.0363C8.65773 11.1631 8.43464 11.2308 8.20643 11.2308C7.90041 11.2308 7.60693 11.1092 7.39054 10.8928C7.17415 10.6764 7.05259 10.3829 7.05259 10.0769ZM16.2834 10.0769C16.2834 10.3051 16.2157 10.5282 16.0889 10.718C15.9621 10.9077 15.7819 11.0556 15.5711 11.1429C15.3602 11.2303 15.1282 11.2531 14.9044 11.2086C14.6806 11.1641 14.475 11.0542 14.3136 10.8928C14.1522 10.7314 14.0424 10.5259 13.9978 10.302C13.9533 10.0782 13.9762 9.8462 14.0635 9.63536C14.1508 9.42453 14.2987 9.24432 14.4885 9.11753C14.6782 8.99075 14.9013 8.92308 15.1295 8.92308C15.4355 8.92308 15.729 9.04464 15.9454 9.26103C16.1618 9.47742 16.2834 9.7709 16.2834 10.0769ZM16.1795 16.2308C16.2352 16.3183 16.2725 16.4162 16.2894 16.5186C16.3062 16.621 16.3022 16.7257 16.2775 16.8264C16.2528 16.9272 16.208 17.0219 16.1458 17.1049C16.0835 17.1879 16.0051 17.2575 15.9153 17.3094C15.8255 17.3613 15.7261 17.3945 15.6231 17.4071C15.5201 17.4196 15.4157 17.4111 15.316 17.3822C15.2164 17.3533 15.1236 17.3045 15.0433 17.2389C14.963 17.1732 14.8968 17.0919 14.8487 17C14.1305 15.7587 13.0016 15.0769 11.668 15.0769C10.3343 15.0769 9.20547 15.7596 8.4872 17C8.43911 17.0919 8.37293 17.1732 8.29262 17.2389C8.21232 17.3045 8.11956 17.3533 8.01992 17.3822C7.92029 17.4111 7.81583 17.4196 7.71284 17.4071C7.60985 17.3945 7.51046 17.3613 7.42064 17.3094C7.33082 17.2575 7.25243 17.1879 7.19019 17.1049C7.12795 17.0219 7.08314 16.9272 7.05846 16.8264C7.03377 16.7257 7.02973 16.621 7.04657 16.5186C7.06341 16.4162 7.10078 16.3183 7.15643 16.2308C8.14586 14.5202 9.79009 13.5385 11.668 13.5385C13.5459 13.5385 15.1901 14.5192 16.1795 16.2308Z"
+                    fill="#B70000" />
+                </svg>
+              </div>
+              <div class="familiar-compare__frame familiar-compare__frame--bad">
+                <div class="familiar-mock">
+                  <div class="familiar-mock__title">Новости</div>
+                  <div class="familiar-mock__card">
+                    <div class="familiar-mock__img"></div>
+                    <div class="familiar-mock__caption">
+                      Главная прядь своей польз BotuPeeel
+                    </div>
+                    <div class="familiar-mock__lines">
+                      <span></span><span></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="familiar-compare">
+              <div class="familiar-compare__label familiar-compare__label--good">
+                Хорошо
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M8 14C8 14 9.5 16 12 16C14.5 16 16 14 16 14M9 9H9.01M15 9H15.01M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+                    stroke="#008613" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="familiar-compare__frame familiar-compare__frame--good">
+                <div class="familiar-mock">
+                  <div class="familiar-mock__title">Новости</div>
+                  <div class="familiar-mock__card">
+                    <div class="familiar-mock__img"></div>
+                    <div class="familiar-mock__caption">
+                      Главная прядь своей польз BotuPeeel
+                    </div>
+                    <div class="familiar-mock__btn">Подробнее »</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="familiar-panel" data-panel="1">
+          <div class="familiar-panel__content">
+            <h3 class="familiar-panel__heading">
+              Текст и фон
+            </h3>
+            <p class="familiar-panel__text">
+              Мелкие элементы интерфейса, такие как иконки, могут быть неразличимы на экране, особенно для пользователей
+              с
+              ограниченным зрением. Мы сделаем их более заметными, увеличив размер и добавив контрастные цвета.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- rework -->
+  <section id="about" class="rework section">
+    <div class="container">
+      <h2 class="rework__title">Не каждый сайт нужно делать заново</h2>
+      <p class="rework__subtitle">
+        Если структура сайта работает, нет смысла тратить время и бюджет на разработку с нуля. Мы обновим дизайн,
+        ускорим загрузку и устраним ошибки — сохраним лучшее и сделаем сайт современным.
+      </p>
+
+      <div class="rework__compare">
+        <div class="rework-compare">
+          <div class="rework-compare__label rework-compare__label--bad">
+            <span>ДО</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <g clip-path="url(#clip0_2257_1187)">
+                <path
+                  d="M16 10C16 10 14.5 8 12 8C9.5 8 8 10 8 10M15 15H14.99M9 15H8.99M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12Z"
+                  stroke="#1E1E1E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+              </g>
+              <defs>
+                <clipPath id="clip0_2257_1187">
+                  <rect width="24" height="24" fill="white" transform="matrix(-1 0 0 -1 24 24)" />
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+          <div class="rework-compare__frame rework-compare__frame--bad">
+            <div class="rework-mock">
+              <div class="rework-mock__img"></div>
+            </div>
+          </div>
+        </div>
+        <div class="rework-compare">
+          <div class="rework-compare__label rework-compare__label--good">
+            <span>ПОСЛЕ</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <g clip-path="url(#clip0_2257_1197)">
+                <path
+                  d="M8 14C8 14 9.5 16 12 16C14.5 16 16 14 16 14M9 9H9.01M15 9H15.01M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+                  stroke="#1E1E1E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+              </g>
+              <defs>
+                <clipPath id="clip0_2257_1197">
+                  <rect width="24" height="24" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+          <div class="rework-compare__frame rework-compare__frame--good">
+            <div class="rework-mock">
+              <div class="rework-mock__img"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ul class="rework__features">
+        <li class="rework-feature">
+          <h3 class="rework-feature__title">Освежаем дизайн</h3>
+          <p class="rework-feature__text">
+            Обновляем внешний вид, делаем его современным и привлекательным
+          </p>
+        </li>
+        <li class="rework-feature">
+          <h3 class="rework-feature__title">Ускоряем загрузку</h3>
+          <p class="rework-feature__text">
+            Оптимизируем изображения и код, сайт работает быстрее и лучше для пользователей
+          </p>
+        </li>
+        <li class="rework-feature">
+          <h3 class="rework-feature__title">Улучшаем мобильную версию</h3>
+          <p class="rework-feature__text">
+            Сайт отлично выглядит и удобно работает на любых устройствах
+          </p>
+        </li>
+        <li class="rework-feature">
+          <h3 class="rework-feature__title">Исправляем ошибки</h3>
+          <p class="rework-feature__text">
+            Устраняем технические проблемы и повышаем стабильность сайта
+          </p>
+        </li>
+      </ul>
+
+      <div class="rework__banner">
+        <div class="rework__banner-title">
+          Быстро. Доступно. Эффективно.
+        </div>
+        <div class="rework__banner-subtitle">
+          Ваш сайт станет лучше без лишних затрат и долгих разработок.
+        </div>
+        <button class="btn btn--primary">Оставить заявку</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- profit -->
+  <section id="services" class="profit section">
+    <div class="container">
+      <h2 class="profit__title">Ошибки сайта = потеря прибыли</h2>
+
+      <div class="profit__grid">
+        <div class="profit-card">
+          <h3 class="profit-card__title">СЛИВ БЮДЖЕТА НА РЕКЛАМУ</h3>
+          <p class="profit-card__text">
+            Вы платите за клики в Яндекс.Директ или соцсетях, но пользователи уходят через 3 секунды. Они просто
+            не дожидаются загрузки, не могут найти кнопку заказа или нужную им информацию. Деньги улетают в трубу.
+          </p>
+        </div>
+        <div class="profit-card">
+          <h3 class="profit-card__title">УДАР ПО РЕПУТАЦИИ</h3>
+          <p class="profit-card__text">
+            Клиент оценивает ваш профессионализм по внешнему виду сайта. Вы можете продавать премиальные товары
+            или оказывать услуги высочайшего уровня. Но если они упакованы в неряшливый интерфейс с плохой читаемостью
+            и дешёвой графикой, ваш продукт автоматически будет восприниматься пользователями как низкосортный.
+          </p>
+        </div>
+        <div class="profit-card">
+          <h3 class="profit-card__title">ОТКАЗ ОТ ПОВТОРНЫХ ПОКУПОК</h3>
+          <p class="profit-card__text">
+            Привлечь нового клиента стоит дорого. Если при первом заказе пользователь спотыкался о кривые формы, долго
+            искал личный кабинет или ждал загрузки страниц, он больше не вернётся. Мелкие баги навсегда убивают желание
+            совершить повторную покупку.
+          </p>
+        </div>
+        <div class="profit-card">
+          <h3 class="profit-card__title">ПОДАРКИ КОНКУРЕНТАМ</h3>
+          <p class="profit-card__text">
+            Если на вашем сайте неудобно читать описание, а форма заявки глючит, пользователь не будет разбираться.
+            Он закроет вкладку и уйдёт на аккуратный, быстрый сайт конкурента, где все покупается в один клик.
+          </p>
+        </div>
+        <div class="profit-card">
+          <h3 class="profit-card__title">СЛЕПАЯ ЗОНА НА СМАРТФОНАХ</h3>
+          <p class="profit-card__text">
+            Более 70% пользователей заходят на сайты с телефонов. Если на десктопе все выглядит сносно, а на мобильном
+            блоки наезжают друг на друга и меню перекрывает экран, вы добровольно отрезаете от себя большую часть
+            платёжеспособной аудитории.
+          </p>
+        </div>
+        <div class="profit-card">
+          <h3 class="profit-card__title">РУТИНА СЪЕДАЕТ ВРЕМЯ И НЕРВЫ</h3>
+          <p class="profit-card__text">
+            Если на сайте нет понятной структуры, а контент устарел, клиенты не могут найти цены или записаться онлайн.
+            Администратор вместо своей основной работы вынужден часами висеть на телефоне и вручную скидывать прайсы
+            в мессенджеры. Вы платите сотруднику за рутину, которую должен делать сайт.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- steps -->
+  <section id="contacts" class="steps section">
+    <div class="container-small">
+      <h2 class="steps__title">Этапы работы с нами</h2>
+
+      <ol class="steps__list">
+        <li class="step-card">
+          <div class="step-card__body">
+            <h3 class="step-card__heading"><span class="step-card__num">( 01 )</span> Аудит</h3>
+            <p class="step-card__text">Вы платите за клики в Яндекс.Директ или соцсетях, но пользователи уходят
+              через 3 секунды. Они просто не дожидаются загрузки, не могут найти кнопку заказа или нужную им информацию.
+              Деньги улетают в трубу.</p>
+          </div>
+          <div class="step-card__icon">
+            <img src="./img/Search-icon.svg" alt="">
+          </div>
+        </li>
+        <li class="step-card">
+          <div class="step-card__body">
+            <h3 class="step-card__heading"><span class="step-card__num">( 02 )</span> Текст и дизайн</h3>
+            <p class="step-card__text">Вы платите за клики в Яндекс.Директ или соцсетях, но пользователи уходят
+              через 3 секунды. Они просто не дожидаются загрузки, не могут найти кнопку заказа или нужную им информацию.
+              Деньги улетают в трубу.</p>
+          </div>
+          <div class="step-card__icon">
+            <img src="./img/Image-icon.svg" alt="">
+          </div>
+        </li>
+        <li class="step-card">
+          <div class="step-card__body">
+            <h3 class="step-card__heading"><span class="step-card__num">( 03 )</span> Разработка</h3>
+            <p class="step-card__text">Вы платите за клики в Яндекс.Директ или соцсетях, но пользователи уходят
+              через 3 секунды. Они просто не дожидаются загрузки, не могут найти кнопку заказа или нужную им информацию.
+              Деньги улетают в трубу.</p>
+          </div>
+          <div class="step-card__icon">
+            <img src="./img/Code-icon.svg" alt="">
+          </div>
+        </li>
+        <li class="step-card">
+          <div class="step-card__body">
+            <h3 class="step-card__heading"><span class="step-card__num">( 04 )</span> Тестирование и запуск</h3>
+            <p class="step-card__text">Вы платите за клики в Яндекс.Директ или соцсети, но пользователи уходят через 3
+              секунды. Они просто не дожидаются загрузки, не могут найти кнопку заказа или нужную им информацию. Деньги
+              утекают в трубу.</p>
+          </div>
+          <div class="step-card__icon">
+            <img src="./img/lucide_rocket.svg" alt="">
+          </div>
+        </li>
+      </ol>
+    </div>
+    <div class="container">
+      <div class="cta">
+        <div class="cta__inner">
+          <div class="cta__img cta__img--left"></div>
+          <div class="cta__content">
+            <h2 class="cta__title">Давайте исправим ваш сайт</h2>
+            <p class="cta__text">Бесплатно найдем 3 ошибки: выявим ключевые недочёты в дизайне, вёрстке или скорости
+              работы и покажем как их можно исправить.</p>
+            <div class="cta__buttons">
+              <button class="btn btn--primary">Оставить заявку</button>
+              <button class="btn btn--outline cta__btn-outline">Бесплатный аудит</button>
+            </div>
+          </div>
+          <div class="cta__img cta__img--right"></div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- why -->
+  <section class="why section">
+    <div class="container">
+      <div class="why__grid">
+        <div class="why-lead">
+          <h2 class="why-lead__title">Почему<br />выбирают нас</h2>
+          <p class="why-lead__text">
+            <strong>100+ довольных клиентов</strong> уже выбрали нас. <br> <br>
+            Мы оказываем поддержку после сдачи работы и остаёмся всегда на связи. При необходимости можем оказывать
+            поддержку на постоянной основе за отдельную плату.
+          </p>
+        </div>
+
+        <div class="why-card why-card--media-bottom">
+          <h3 class="why-card__title">Правки от 2 часов</h3>
+          <p class="why-card__text">
+            Не растягиваем мелкие задачи на недели. У нас чёткий конвейер: получили задачу — выровняли вёрстку,
+            настроили отступы или ускорили код. Большинство точечных правок сдаём в день обращения.
+          </p>
+          <div class="why-card__media"></div>
+        </div>
+
+        <div class="why-card">
+          <div class="why-card__media"></div>
+          <h3 class="why-card__title">Без переплат<br />за новый сайт</h3>
+          <p class="why-card__text">
+            Зачем платить огромные деньги за разработку с нуля, если у вас хорошая база? Мы ювелирно чиним то,
+            что сломано, и освежаем визуал. Вы получаете аккуратный и быстрый сайт с минимальными вложениями.
+          </p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-card__media"></div>
+          <h3 class="why-card__title">Не мучаем вас<br />техзаданиями</h3>
+          <p class="why-card__text">
+            Вам не нужно разбираться в коде или дизайне, чтобы составить ТЗ. Просто покажите или пришлите скриншот
+            со словами «хочу ровнее» или «сайт тормозит». Мы сами проведём диагностику и предложим решение.
+          </p>
+        </div>
+
+        <div class="why-card why-card--media-bottom">
+          <h3 class="why-card__title">Честная<br />и фиксированная цена</h3>
+          <p class="why-card__text">
+            Стоимость правки известна до начала работы и не изменится в процессе. Никаких скрытых платежей, почасовых
+            переплат или внезапных наценок. Вы платите только за конкретный результат.
+          </p>
+          <div class="why-card__media"></div>
+        </div>
+
+        <div class="why-card">
+          <div class="why-card__media"></div>
+          <h3 class="why-card__title">Синергия кода<br />и дизайна</h3>
+          <p class="why-card__text">
+            Наша команда — это связка сильного дизайнера и опытного разработчика. Мы не просто рисуем красивые макеты,
+            которые невозможно сверстать, а сразу внедряем аккуратный UI в чистый, быстрый и оптимизированный код.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <!-- pricing -->
+  <section class="pricing section">
+     <div class="container">
+       <h2 class="pricing__title">Стоимость доработки сайта</h2>
+
+       <div class="pricing__grid">
+         <div class="price-card">
+           <div class="price-card__head">
+             <span class="price-card__name">Починить и улучшить</span>
+             <span class="price-card__badge">( 01 )</span>
+           </div>
+           <h3 class="price-card__title">Start</h3>
+           <p class="price-card__lead">
+             Для тех, у кого уже есть сайт, но накопились небольшие проблемы:
+           </p>
+           <ul class="price-card__list">
+             <li>Исправление ошибок и багов</li>
+             <li>Мобильная адаптация отдельных блоков</li>
+             <li>Контентные правки</li>
+             <li>Исправление форм и кнопок</li>
+             <li>Небольшие изменения дизайна</li>
+             <li>Оптимизация отдельных проблем со скоростью</li>
+             <li>Мелкие доработки функционала</li>
+           </ul>
+           <p class="price-card__note">
+             Подходит: когда нужно быстро привести сайт в порядок без большого
+             редизайна.
+           </p>
+           <div class="price-card__price">от 5 900 ₽</div>
+         </div>
+
+         <div class="price-card">
+           <div class="price-card__head">
+             <span class="price-card__name">Улучшить сайт</span>
+             <span class="price-card__badge">( 02 )</span>
+           </div>
+           <h3 class="price-card__title">Business</h3>
+           <p class="price-card__lead">
+             Для тех, кто хочет не просто исправить ошибки, а заметно улучшить
+             сайт:
+           </p>
+           <p class="price-card__inherit">Всё из START +</p>
+           <ul class="price-card__list">
+             <li>Ускорение загрузки сайта</li>
+             <li>Полноценная мобильная адаптация</li>
+             <li>Обновление дизайна отдельных страниц/блоков</li>
+             <li>Новые блоки и функциональность</li>
+             <li>Интеграции с внешними сервисами и API</li>
+           </ul>
+           <p class="price-card__note">
+             Подходит: когда сайт работает, но выглядит устаревшим, медленно
+             работает или теряет клиентов.
+           </p>
+           <div class="price-card__price">от 14 900 ₽</div>
+         </div>
+
+         <div class="price-card">
+           <div class="price-card__head">
+             <span class="price-card__name">Полное обновление</span>
+             <span class="price-card__badge">( 03 )</span>
+           </div>
+           <h3 class="price-card__title">Pro</h3>
+           <p class="price-card__lead">
+             Для тех, кто хочет комплексно привести сайт в порядок и развивать
+             его дальше.
+           </p>
+           <p class="price-card__inherit">Всё из BUSINESS +</p>
+           <ul class="price-card__list">
+             <li>Полный редизайн страницы или ключевых разделов</li>
+             <li>Комплексное улучшение UX/UI</li>
+             <li>Глубокая оптимизация скорости</li>
+             <li>Разработка новых функций</li>
+             <li>Долгосрочная поддержка</li>
+           </ul>
+           <p class="price-card__note">
+             Подходит: если сайт требует серьёзного обновления, а не отдельных
+             правок.
+           </p>
+           <div class="price-card__price">от 29 900 ₽</div>
+         </div>
+
+         <div class="pricing__audit">
+           <h3 class="pricing__audit-title">Бесплатный<br />аудит</h3>
+           <p class="pricing__audit-text">
+             Найдём несколько критических ошибок на вашем сайте
+           </p>
+           <button class="btn btn--primary pricing__audit-btn">
+             Оставить заявку
+           </button>
+         </div>
+       </div>
+     </div>
+  </section>
+
+  <!-- faq -->
+  <section class="faq section">
+    <div class="container">
+      <h2 class="faq__title">Вопросы и ответы</h2>
+      <p class="faq__subtitle">
+        Отвечаем на самые частые вопросы о доработке сайтов
+      </p>
+
+      <div class="faq__list">
+        <details class="faq-item">
+          <summary class="faq-item__question">
+            Сколько времени займут доработки?
+            <span class="faq-item__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-item__answer">
+            Зависит от объёма: точечные правки — 1–3 дня, комплексная
+            доработка — до двух недель. Точный срок фиксируем в смете до
+            старта.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-item__question">
+            Что если у меня самописный сайт на старом движке?
+            <span class="faq-item__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-item__answer">
+            Работаем с любыми CMS и самописными решениями. На аудите
+            определим, что можно доработать, а что действительно проще
+            переделать.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-item__question">
+            Вы гарантируете результат?
+            <span class="faq-item__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-item__answer">
+            Да. По договору фиксируем список работ и показатели — например,
+            рост PageSpeed выше 80 баллов.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-item__question">
+            Мой сайт «упадёт» на время работ?
+            <span class="faq-item__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-item__answer">
+            Нет. Все правки делаем на копии сайта и выкатываем на рабочий
+            домен одним обновлением — без простоя.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-item__question">
+            Сколько стоит аудит?
+            <span class="faq-item__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-item__answer">
+            Ноль рублей. Бесплатно проанализируем сайт и пришлём список ошибок
+            — решение о сотрудничестве остаётся за вами.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- request form -->
+  <section class="request section">
+    <div class="container">
+      <div class="request__inner">
+        <div class="request-card request-card--info">
+          <h2 class="request__title">Оставьте заявку<br />на бесплатный<br />аудит сайта</h2>
+          <p class="request__text">Выберите удобный способ связи и оставьте свои контакты, а мы ответим вам в ближайшее
+            время.</p>
+          <p class="request__includes">Весь экспресс-аудит сайта включает:</p>
+          <ul class="request__list">
+            <li><strong>Поиск 3 ошибок:</strong> выявим ключевые недочёты в дизайне, вёрстке и скорости работы.</li>
+            <li><strong>Наглядную демонстрацию:</strong> покажем и объясним понятным языком, как исправить эти ошибки.
+            </li>
+          </ul>
+          <p class="request__note-top">Так же можете написать нам сами, мы всегда на связи!</p>
+          <div class="request__socials">
+            <a href="https://t.me/ui_kit_work_site" class="request__social" target="_blank" rel="noopener"
+              aria-label="Telegram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M21.5 4.5 2.9 11.7c-.8.3-.8 1.4 0 1.7l4.5 1.5 1.7 5.2c.2.7 1.1.9 1.6.4l2.5-2.4 4.6 3.4c.6.4 1.5.1 1.6-.7l3-14.6c.2-.9-.7-1.6-1.5-1.3z" />
+                <path d="M7.4 14.9 19 6.2l-8.7 9.7-.3 4" />
+              </svg>
+            </a>
+            <a href="https://vk.ru/ui-kit" class="request__social" target="_blank" rel="noopener"
+              aria-label="ВКонтакте">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M7 9.5c1 3 2.5 4.5 4 4.5V9.5m0 4.5c1.5 0 3-1.5 4-4.5" />
+              </svg>
+            </a>
+            <a href="mailto:ui-kit@mail.ru" class="request__social request__social--wide">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <path d="m3 7 9 6 9-6" />
+              </svg>
+              <span>ui-kit@mail.ru</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="request-card">
+          <div class="request__tabs" role="tablist">
+            <button class="request__tab is-active" type="button" data-contact="telegram">Телеграм</button>
+            <button class="request__tab" type="button" data-contact="whatsapp">Ватсап</button>
+            <button class="request__tab" type="button" data-contact="email">Электронная почта</button>
+          </div>
+
+          <form class="request__form" action="#" method="post" novalidate>
+            <div class="request__row">
+              <div class="request__field">
+                <label class="request__label" for="req-name">Имя<span>*</span></label>
+                <input id="req-name" type="text" name="name" required />
+              </div>
+              <div class="request__field">
+                <label class="request__label" for="req-phone">Телефон<span>*</span></label>
+                <input id="req-phone" type="tel" name="phone" placeholder="+7-___-___-___" required />
+              </div>
+            </div>
+            <div class="request__field" data-contact-field>
+              <label class="request__label" for="req-contact" id="req-contact-label">Ваш ник в
+                Телеграме<span>*</span></label>
+              <input id="req-contact" type="text" name="contact" placeholder="@username" required />
+            </div>
+            <div class="request__field">
+              <label class="request__label" for="req-site">Ссылка на сайт</label>
+              <input id="req-site" type="url" name="site" />
+            </div>
+            <div class="request__field">
+              <label class="request__label" for="req-comment">Комментарий</label>
+              <textarea id="req-comment" name="comment" rows="4"></textarea>
+            </div>
+            <label class="request__consent">
+              <input type="checkbox" name="consent" checked required />
+              <span>Нажимая кнопку «Оставить заявку», я даю свое согласие на обработку моих персональных данных в
+                соответствии с условиями, изложенными в <a href="#">Политике конфиденциальности</a>, и подтверждаю, что
+                ознакомлен(а) с ней.</span>
+            </label>
+            <button type="submit" class="btn btn--primary request__submit">Оставить заявку</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- contacts / footer -->
+  <footer id="contacts" class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__col">
+          <a href="/" class="footer__logo">
+            <img src="./img/logo.svg" alt="UI-KIT" />
+          </a>
+          <p class="footer__desc">
+            Исправляем ошибки на сайтах, ускоряем загрузку, делаем интерфейс
+            удобным, современным и привлекательным, чтобы принести вашему
+            сайту больше заявок.
+          </p>
+          <p class="footer__hours">с 9:00 до 18:00 по мск</p>
+          <button class="btn btn--primary">Оставить заявку</button>
+        </div>
+        <nav class="footer__nav">
+          <a href="#about">Какие проблемы решаем</a>
+          <a href="#services">Типичные ошибки сайта</a>
+          <a href="#contacts">Почему теряете прибыль</a>
+          <a href="#contacts">Этапы работы</a>
+          <a href="#contacts">Почему выбирают нас</a>
+          <a href="#contacts">Стоимость</a>
+          <a href="#contacts">Вопросы</a>
+        </nav>
+        <div class="footer__contacts">
+          <h3 class="footer__contacts-title">Контакты</h3>
+          <a href="https://t.me/ui_kit_work_site" class="footer__contact" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path
+                d="M21.5 4.5 2.9 11.7c-.8.3-.8 1.4 0 1.7l4.5 1.5 1.7 5.2c.2.7 1.1.9 1.6.4l2.5-2.4 4.6 3.4c.6.4 1.5.1 1.6-.7l3-14.6c.2-.9-.7-1.6-1.5-1.3z" />
+              <path d="M7.4 14.9 19 6.2l-8.7 9.7-.3 4" />
+            </svg>
+            <span>@ui_kit_work_site</span>
+          </a>
+          <a href="https://vk.ru/ui-kit" class="footer__contact" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M7 9.5c1 3 2.5 4.5 4 4.5V9.5m0 4.5c1.5 0 3-1.5 4-4.5" />
+            </svg>
+            <span>https://vk.ru/ui-kit</span>
+          </a>
+          <a href="mailto:ui-kit@mail.ru" class="footer__contact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="m3 7 9 6 9-6" />
+            </svg>
+            <span>ui-kit@mail.ru</span>
+          </a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 UI-KIT</p>
+        <a href="#">Политика обработки персональных данных</a>
+        <div class="footer__requisites">
+          <p>Петренко Алексей Игоревич самозанятый</p>
+          <p>ИНН: 623930337587</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/js/main.js"></script>
+</body>
+
+</html>

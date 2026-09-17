@@ -1,0 +1,27 @@
+.header {
+  padding-top: 24px;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 40px;
+    background-color: $palette-off-white;
+    border-radius: 100px;
+  }
+  &__logo {
+  }
+  .btn {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+
+  a:hover {
+    color: $color-primary;
+  }
+}

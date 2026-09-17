@@ -1,0 +1,19 @@
+<svg width="1400" height="469" viewBox="0 0 1400 469" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_f_2389_1246)">
+<circle cx="700" cy="700" r="640" fill="#D8F7FF"/>
+<circle cx="700" cy="722" r="620" fill="#67DEFF"/>
+<circle cx="700" cy="658" r="505" fill="white"/>
+<circle cx="700" cy="704" r="480" fill="#6FE9FF"/>
+<ellipse cx="700" cy="655" rx="400" ry="385" fill="#20A2FF"/>
+<ellipse cx="700" cy="618" rx="320" ry="305" fill="#015AFF"/>
+<ellipse cx="700" cy="601" rx="250" ry="235" fill="#88EAFF"/>
+<circle cx="700" cy="594" r="190" fill="white"/>
+</g>
+<defs>
+<filter id="filter0_f_2389_1246" x="0" y="0" width="1400" height="1402" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="30" result="effect1_foregroundBlur_2389_1246"/>
+</filter>
+</defs>
+</svg>

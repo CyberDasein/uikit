@@ -1,0 +1,88 @@
+body {}
+
+.section {
+  padding-block: 80px;
+
+  @include mq($bp-mobile) {
+    padding-block: 120px;
+  }
+}
+
+.hero {
+  padding-top: 70px;
+  text-align: center;
+  height: calc(100vh - 114px);
+  background-image: url("../img/blur.svg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  overflow: hidden;
+
+  &__title {
+    font-size: 52px;
+    margin-bottom: 38px;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 24px;
+  }
+
+  .btn {
+    position: relative;
+    z-index: 100;
+  }
+  .btn--primary {
+    margin-right: 16px;
+  }
+
+  &::before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url("../img/main-bg.webp");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    z-index: -1;
+  }
+
+  .hero-animated-items {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    height: 60%;
+    position: absolute;
+    bottom: 0;
+
+    .hero-animated-item {
+      position: relative;
+      height: fit-content;
+      max-width: 130px;
+      animation: riseUp 3.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+
+      @for $i from 1 through 7 {
+        &.item-#{$i} {
+          top: #{nth(70% 50% 40% 30% 40% 50% 70%, $i)};
+          animation-delay: #{$i * 0.22}s;
+        }
+      }
+
+    }
+  }
+}
+
+@keyframes riseUp {
+  from {
+    transform: translateY(120%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

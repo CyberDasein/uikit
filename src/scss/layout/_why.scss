@@ -1,0 +1,141 @@
+// Секция «Почему выбирают нас»
+.why {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 32vw;
+    max-width: 30%;
+    height: 100%;
+    max-height: 600px;
+    background-image: url("../img/star-bg-1.webp");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 0;
+  }
+ &::after {
+    content: '';
+    position: absolute;
+    right: 5vw;
+    top: 2vh;
+    width: 100%;
+    max-width: 192px;
+    height: 100%;
+    max-height: 230px;
+    background-image: url("../img/star-bg-2.webp");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: start;
+
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.why-lead {
+  padding-right: 24px;
+  
+  &__title {
+    text-transform: uppercase;
+    margin-bottom: 24px;
+
+  }
+
+  &__text {
+    font-weight: 500;
+    strong {
+      font-weight: 700;
+    }
+  }
+
+  @media (max-width: 900px) {
+    grid-column: 1 / -1;
+  }
+}
+
+.why-card {
+  display: flex;
+  flex-direction: column;
+  background: $palette-white;
+  border: 2px solid $palette-lavender-light;
+  border-radius: 30px;
+  padding: 36px 32px;
+  min-height: 412px;
+
+
+  &:nth-child(4) {
+    position: relative;
+    &::after {
+    content: '';
+    position: absolute;
+    left: 5%;
+    top: -40%;
+    width: 100%;
+    max-width: 182px;
+    height: 100%;
+    max-height: 220px;
+    background-image: url("../img/star-bg-2.webp");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: contain;
+    pointer-events: none;
+    z-index: -1;
+  }
+  }
+  // плейсхолдер изображения прижат к низу карточки
+  &--media-bottom {
+    .why-card__media {
+      margin-top: auto;
+      margin-bottom: 0;
+      min-height: 94px;
+    }
+  }
+
+  // карточки, где плейсхолдер картинки стоит после текста
+  &--reverse {
+    justify-content: space-between;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    font-weight: 500;
+  }
+
+  &__media {
+    margin-bottom: auto;
+    background: $palette-off-white;
+    border-radius: 16px;
+    min-height: 94px;
+  }
+
+  @media (max-width: 900px) {
+    grid-column: auto;
+  }
+}

@@ -1,0 +1,15 @@
+@use 'sass:math';
+
+// Адаптив по брейкпоинту (mobile-first)
+@mixin mq($bp) {
+  @media (min-width: $bp) {
+    @content;
+  }
+}
+
+// Центрирование flex
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

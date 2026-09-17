@@ -1,0 +1,186 @@
+// Секция "Возможно, вам это знакомо" (табы)
+.familiar {
+  text-align: center;
+  background-color: $palette-off-white;
+  &__title {
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    margin-bottom: 60px;
+  }
+
+  &__tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+
+  &__tab {
+    padding: 12px 24px;
+    border-radius: 50px;
+    border: none;
+    background: $palette-white;
+    font-weight: 500;
+    font-family: $font-main;
+    color: $palette-black;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: $palette-black;
+      color: $palette-white;
+    }
+
+    &.is-active {
+      background: $palette-black;
+      border-color: $palette-black;
+      color: $palette-white;
+    }
+  }
+
+  &__panels {
+    text-align: left;
+  }
+}
+
+.familiar-panel {
+  display: none;
+  background: $palette-white;
+  border-radius: 36px;
+  padding: 40px;
+  gap: 32px;
+  align-items: center;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  &.is-active {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+  }
+
+  &__heading {
+    font-family: $font-heading;
+    font-size: 24px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    font-weight: 500;
+    color: $palette-black;
+    margin-bottom: 16px;
+  }
+
+  &__compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.familiar-compare {
+  &__label {
+    display: inline-flex;
+    padding: 8px 16px;
+    border-radius: 12px;
+    width: 100%;
+    background-color: $palette-off-white;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    margin-bottom: 12px;
+
+    svg {
+      margin-left: auto;
+      width: 24px;
+      height: 24px;
+    }
+
+    &--bad {
+      color: #B70000;
+    }
+
+    &--good {
+      color: #008613;
+    }
+  }
+
+  &__frame {
+    background: #fde2ec;
+    border-radius: 20px;
+    padding: 20px;
+
+    &--bad .familiar-mock {
+      opacity: 0.85;
+    }
+  }
+}
+
+// Мок-карточка «Новости»
+.familiar-mock {
+  background: #fbcfe0;
+  border-radius: 14px;
+  padding: 16px;
+  text-align: center;
+
+  &__title {
+    font-family: $font-heading;
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  &__card {
+    background: $palette-white;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: left;
+  }
+
+  &__img {
+    height: 110px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #e9d8e2, #d8c5d4);
+    margin-bottom: 10px;
+  }
+
+  &__caption {
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  &__lines {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    span {
+      height: 6px;
+      border-radius: 3px;
+      background: $palette-lavender-light;
+
+      &:last-child {
+        width: 60%;
+      }
+    }
+  }
+
+  &__btn {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    color: $palette-blue;
+  }
+}

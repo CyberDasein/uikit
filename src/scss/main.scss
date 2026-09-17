@@ -1,0 +1,18 @@
+// Точка входа: импорт стилей
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+@import 'base/fonts';
+@import 'base/reset';
+@import 'base/typography';
+@import 'components/buttons';
+@import 'components/container';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/sections';
+@import 'layout/problems';
+@import 'layout/familiar';
+@import 'layout/rework';
+@import 'layout/profit-steps';
+@import 'layout/why';
+@import 'layout/pricing';
+@import 'layout/faq-request';

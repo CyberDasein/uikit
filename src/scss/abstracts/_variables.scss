@@ -1,0 +1,47 @@
+// Цвета
+$color-primary: #015AFF;
+$color-primary-dark: #2563eb;
+$color-text: #1E1E1E;
+$color-bg: #ffffff;
+$color-bg-alt: #f3f4f6;
+
+// Палитра с макета
+$palette-gray-light: #9BA1B1;   // светло-серо-голубой
+$palette-gray: #6F7585;         // серо-голубой
+$palette-gray-dark: #4D525F;    // тёмный серо-синий
+$palette-lavender-light: #DCDFE9; // почти белый с сиреневым оттенком
+$palette-off-white: #F0F1F5;    // белёсый
+$palette-blue: #015AFF;         // синий (акцент)
+$palette-white: #ffffff;        // белый
+$palette-black: #1E1E1E;        // почти чёрный
+
+// Типографика
+$font-main: 'Manrope',
+'Arial',
+'Helvetica',
+sans-serif;
+$font-heading: 'Unbounded',
+'Arial',
+sans-serif;
+$fs-base: 16px;
+
+// Контейнер
+$container-max: 1280px;
+$container-small-max: 992px;
+$container-pad: 16px;
+
+// Брейкпоинты
+$bp-mobile: 576px;
+$bp-tablet: 768px;
+$bp-desktop: 1024px;
+
+@keyframes flyIn {
+  0% {
+    /* Starts off-screen to the left and slightly lower */
+    transform: translate3d(-5%, 50px, 0); 
+  }
+  100% {
+    /* Ends at its original planned layout position */
+    transform: translate3d(0, 0, 0); 
+  }
+}

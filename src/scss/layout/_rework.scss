@@ -1,0 +1,148 @@
+// Секция «Не каждый сайт нужно делать заново»
+.rework {
+  text-align: center;
+  padding-bottom: 0;
+  &__title {
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    max-width: 60%;
+    margin: 0 auto 60px;
+  }
+
+  &__compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 0 auto 36px;
+
+    @media (max-width: 700px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 36px;
+    list-style: none;
+
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__banner {
+    display: flex;
+    align-items: center;
+    background-color: $palette-black;
+    background-image: url("./img/banner-bg.webp");
+    background-repeat: no-repeat;
+    color: $palette-white;
+    border-radius: 32px;
+    padding: 32px;
+
+    .btn--primary {
+      min-width: 280px;
+    }
+    &-subtitle {
+      max-width: 308px;
+      margin-left: 24px;
+      margin-right: auto;
+    }
+
+    &-title {
+      font-family: $font-heading;
+      font-size: 24px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.rework-compare {
+  position: relative;
+  &__label {
+    width: 100%;
+    max-width: 50%;
+    position: absolute;
+    padding: 10px 16px;
+    border-radius: 12px;
+    top: 24px;
+    left: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 500;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    &--bad {
+      background-color: #FFD8E4;
+    }
+
+    &--good {
+      background-color: #BBF9DC;
+    }
+  }
+
+  &__frame {
+    border-radius: 32px;
+    &--bad {
+      background: $palette-off-white;
+    }
+
+    &--good {
+      background: #e0ecff;
+    }
+  }
+}
+
+.rework-mock {
+  background: $palette-off-white;
+  border-radius: 32px;
+  text-align: left;
+
+
+  &__img {
+    min-height: 435px;
+    border-radius: 32px;
+  }
+
+  &__btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 18px;
+    border-radius: 100px;
+    background: $palette-blue;
+    color: $palette-white;
+    font-size: 12px;
+    font-weight: 600;
+  }
+}
+
+.rework-feature {
+  text-align: left;
+  border: 2px solid #DCDFE9;
+  border-radius: 16px;
+  padding: 24px;
+
+  &__title {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+
+  &__text {
+    font-weight: 500;
+  }
+}

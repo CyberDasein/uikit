@@ -1,0 +1,42 @@
+.btn {
+  display: inline-block;
+  padding: 16px 24px;
+  font-weight: 600;
+  font-family: $font-main;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+
+  &--primary {
+    background-color: $color-primary;
+    color: #fff;
+
+    &:hover {
+      background-color: $color-primary-dark;
+    }
+  }
+}
+
+// Светлая кнопка (на тёмном фоне)
+.btn--light {
+  background: $palette-white;
+  color: $palette-black;
+
+  &:hover {
+    background: $palette-off-white;
+  }
+}
+
+// Контурная кнопка
+.btn--outline {
+  background: transparent;
+  color: $palette-black;
+  border: 1px solid $palette-blue;
+
+  &:hover {
+    background: $palette-black;
+    color: $palette-white;
+  }
+}
