@@ -3,14 +3,8 @@
   text-align: center;
 
   &__title {
-    margin-bottom: 16px;
+    margin-bottom: 60px;
     text-transform: uppercase;
-  }
-
-  &__subtitle {
-    font-size: 15px;
-    color: $palette-gray;
-    margin-bottom: 48px;
   }
 
   &__list {
@@ -27,21 +21,25 @@
   border: 1px solid $palette-lavender-light;
   border-radius: 20px;
   padding: 20px 24px;
-  transition: border-color 0.2s ease;
+  transition: border 0.2s ease;
 
   &[open] {
     border-color: $palette-blue;
 
     .faq-item__icon::after {
-      content: "−";
+      transform: translate(-50%, -50%) rotate(90deg) scaleX(0);
     }
+  }
+
+  &:hover {
+    border-color: $palette-blue;
   }
 
   &__question {
     list-style: none;
     cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -53,36 +51,47 @@
   }
 
   &__icon {
+    position: relative;
     flex-shrink: 0;
     width: 32px;
     height: 32px;
     border-radius: 50%;
     background: $palette-off-white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    color: $palette-blue;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 14px;
+      height: 2px;
+      border-radius: 2px;
+      background: $palette-blue;
+      transition: transform 0.3s ease;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%);
+    }
 
     &::after {
-      content: "+";
+      transform: translate(-50%, -50%) rotate(90deg) scaleX(1);
     }
   }
 
   &__answer {
-    font-size: 14px;
-    line-height: 1.6;
-    color: $palette-gray-dark;
     padding-top: 14px;
   }
 }
 
 // Секция формы заявки (две белые карточки на светлом фоне)
 .request {
+  background-color: $palette-off-white;
   &__inner {
     display: grid;
-    grid-template-columns: 1fr 1.05fr;
-    gap: 24px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
     align-items: start;
 
     @media (max-width: 900px) {
@@ -91,38 +100,27 @@
   }
 
   &__title {
-    font-family: $font-heading;
-    font-size: 30px;
-    font-weight: 800;
     text-transform: uppercase;
-    line-height: 1.15;
-    margin-bottom: 20px;
+    margin-bottom: 32px;
   }
 
   &__text {
-    font-size: 14px;
-    line-height: 1.6;
-    color: $palette-gray-dark;
+    font-weight: 500;
     margin-bottom: 20px;
   }
 
   &__includes {
-    font-size: 14px;
-    font-weight: 600;
     margin-bottom: 12px;
   }
 
   &__list {
     list-style: none;
-    margin-bottom: 24px;
+    margin-bottom: 68px;
 
     li {
-      font-size: 13px;
-      line-height: 1.5;
-      color: $palette-gray-dark;
       padding-left: 16px;
       position: relative;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
 
       &::before {
         content: '';
@@ -138,31 +136,30 @@
   }
 
   &__note-top {
-    font-size: 14px;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
   }
 
   &__socials {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 12px;
+    gap: 16px;
   }
 
   &__social {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    width: 44px;
-    height: 44px;
+    width: 56px;
+    height: 56px;
     border: 1px solid $palette-lavender-light;
     border-radius: 12px;
     justify-content: center;
     transition: border-color 0.2s ease, color 0.2s ease;
 
     svg {
-      width: 20px;
-      height: 20px;
+      width: 24px;
+      height: 24px;
     }
 
     &--wide {
@@ -181,17 +178,16 @@
   &__tabs {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 24px;
+    gap: 16px;
+    margin-bottom: 32px;
   }
 
   &__tab {
-    padding: 10px 20px;
-    border-radius: 100px;
+    padding: 12px 24px;
+    border-radius: 50px;
     border: none;
     background: $palette-off-white;
-    font-family: $font-main;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 500;
     color: $palette-black;
     cursor: pointer;
@@ -230,9 +226,6 @@
   }
 
   &__label {
-    font-size: 13px;
-    font-weight: 500;
-
     span {
       color: #d92d20;
     }
@@ -241,8 +234,8 @@
   &__consent {
     display: flex;
     gap: 10px;
-    font-size: 11px;
-    line-height: 1.5;
+    font-size: 12px;
+    margin-top: 24px;
     color: $palette-gray;
     cursor: pointer;
 
@@ -263,17 +256,17 @@
 
   &__submit {
     width: 100%;
-    justify-content: center;
+    margin-top: 24px;
   }
 }
 
 .request-card {
   background: $palette-white;
-  border-radius: 28px;
-  padding: 36px 32px;
-
+  border-radius: 32px;
+  padding: 48px;
+  min-height: 100%;
   @media (max-width: 576px) {
-    padding: 24px 20px;
+    padding: 24px;
   }
 
   input[type='text'],
@@ -282,13 +275,11 @@
   input[type='email'],
   textarea {
     width: 100%;
-    padding: 13px 16px;
-    border-radius: 12px;
+    padding: 10px 16px;
+    border-radius: 20px;
     border: 1px solid $palette-lavender-light;
     background: $palette-white;
     color: $palette-black;
-    font-family: $font-main;
-    font-size: 14px;
     outline: none;
     transition: border-color 0.2s ease;
 
@@ -303,6 +294,6 @@
 
   textarea {
     resize: vertical;
-    min-height: 110px;
+    min-height: 80px;
   }
 }
