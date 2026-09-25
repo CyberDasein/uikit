@@ -9,6 +9,27 @@
     background-color: $palette-off-white;
     border-radius: 100px;
   }
+
+  &__burger {
+    display: none;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+
+    span {
+      display: block;
+      height: 2px;
+      margin: 5px 0;
+      border-radius: 2px;
+      background-color: currentColor;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+  }
+
   &__logo {
   }
   .btn {

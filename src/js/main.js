@@ -1,5 +1,23 @@
 import "../scss/main.scss";
 
+// Мобильное меню header
+const headerInner = document.querySelector(".header__inner");
+const headerBurger = document.querySelector(".header__burger");
+
+headerBurger?.addEventListener("click", () => {
+  const isOpen = headerInner?.classList.toggle("is-menu-open");
+  headerBurger.setAttribute("aria-expanded", String(Boolean(isOpen)));
+  headerBurger.setAttribute("aria-label", isOpen ? "Закрыть меню" : "Открыть меню");
+});
+
+headerInner?.querySelectorAll(".nav a").forEach((link) => {
+  link.addEventListener("click", () => {
+    headerInner.classList.remove("is-menu-open");
+    headerBurger?.setAttribute("aria-expanded", "false");
+    headerBurger?.setAttribute("aria-label", "Открыть меню");
+  });
+});
+
 // Табы секции "Возможно, вам это знакомо"
 const tabs = document.querySelectorAll(".familiar__tab");
 const panels = document.querySelectorAll(".familiar-panel");

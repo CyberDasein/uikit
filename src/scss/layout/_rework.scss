@@ -29,7 +29,7 @@
     margin-bottom: 36px;
     list-style: none;
 
-    @media (max-width: 900px) {
+    @media (max-width: 992px) {
       grid-template-columns: repeat(2, 1fr);
     }
 
@@ -44,6 +44,7 @@
     background-color: $palette-black;
     background-image: url("./img/banner-bg.webp");
     background-repeat: no-repeat;
+    background-size: cover;
     color: $palette-white;
     border-radius: 32px;
     padding: 32px;

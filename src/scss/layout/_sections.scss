@@ -32,6 +32,7 @@ body {}
     position: relative;
     z-index: 100;
   }
+
   .btn--primary {
     margin-right: 16px;
   }
@@ -64,6 +65,10 @@ body {}
       max-width: 130px;
       animation: riseUp 3.5s cubic-bezier(0.22, 1, 0.36, 1) both;
 
+      @media (max-width: $container-max) {
+        max-width: 110px;
+      }
+
       @for $i from 1 through 7 {
         &.item-#{$i} {
           top: #{nth(70% 50% 40% 30% 40% 50% 70%, $i)};
@@ -72,6 +77,142 @@ body {}
       }
 
     }
+
+    @media (max-width: 1024px) {
+      display: none
+    }
+  }
+
+  .mobile-hero-animation {
+    display: none;
+    position: relative;
+    margin-top: 32px;
+
+    img {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      z-index: 10;
+    }
+
+    .mobile-hero-animation-img_wrap {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      margin-left: 32px;
+      margin-bottom: 32px;
+
+      @media (max-width: $bp-mobile) {
+        width: 160px;
+        height: 160px;
+        margin-left: 16px;
+        margin-bottom: 16px;
+        top: 36px;
+      }
+    }
+
+    .mobile-hero-animation-img {}
+
+    .cursor-img {
+      width: 200px;
+      height: 200px;
+      right: 6%;
+      top: -30px;
+
+      @media (max-width: $bp-mobile) {
+        width: 120px;
+        height: 110px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      display: block
+    }
+
+  }
+
+  .mobile-hero-animation__spinner {
+    position: absolute;
+    left: calc(50% + 4px);
+    top: calc(50% + 4px);
+
+    /* подгоним после вставки PNG при необходимости */
+    width: 82px;
+    height: 82px;
+    aspect-ratio: 1;
+
+    transform: translate(-50%, -50%);
+    animation: uikit-spin 2.5s linear infinite;
+
+    @media (max-width: $bp-mobile) {
+      width: 50px;
+      height: 50px;
+      left: calc(50% + 2px);
+      top: calc(50% + 2px);
+    }
+  }
+
+  .mobile-hero-animation__spinner i {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 5px;
+    height: 31%;
+    border-radius: 10px;
+    background: #fff;
+    transform-origin: 50% 161%;
+  }
+
+  .mobile-hero-animation__spinner i:nth-child(1) {
+    transform: translate(-50%, -161%) rotate(0deg);
+  }
+
+  .mobile-hero-animation__spinner i:nth-child(2) {
+    transform: translate(-50%, -161%) rotate(45deg);
+  }
+
+  .mobile-hero-animation__spinner i:nth-child(3) {
+    transform: translate(-50%, -161%) rotate(90deg);
+  }
+
+  .mobile-hero-animation__spinner i:nth-child(4) {
+    transform: translate(-50%, -161%) rotate(135deg);
+  }
+
+  .mobile-hero-animation__spinner i:nth-child(5) {
+    transform: translate(-50%, -161%) rotate(180deg);
+  }
+
+  .mobile-hero-animation__spinner i:nth-child(6) {
+    transform: translate(-50%, -161%) rotate(225deg);
+  }
+
+  .mobile-hero-animation__spinner i:nth-child(7) {
+    transform: translate(-50%, -161%) rotate(270deg);
+  }
+
+  .mobile-hero-animation__spinner i:nth-child(8) {
+    transform: translate(-50%, -161%) rotate(315deg);
+  }
+
+
+
+  @media (prefers-reduced-motion: reduce) {
+    .mobile-hero-animation__spinner {
+      animation: none;
+    }
+  }
+}
+
+@keyframes uikit-spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 

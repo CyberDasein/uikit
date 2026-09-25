@@ -2,6 +2,7 @@
 .pricing {
   text-align: center;
   background-color: $palette-off-white;
+
   &__title {
     margin-bottom: 56px;
     text-transform: uppercase;
@@ -45,6 +46,10 @@
       background-repeat: no-repeat;
       pointer-events: none;
       z-index: 0;
+
+      @media (max-width: $bp-desktop) {
+        display: none;
+      }
     }
   }
 
@@ -87,8 +92,7 @@
     font-weight: 500;
   }
 
-  &__name {
-  }
+  &__name {}
 
   &__badge {
     color: $palette-blue;

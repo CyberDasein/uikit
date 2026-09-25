@@ -1,6 +1,7 @@
 // Цвета
 $color-primary: #015AFF;
-$color-primary-dark:  #1151f5;
+$color-primary-dark:  #0c4ef7;
+$color-primary-dark-active:  #0142e7;
 $color-text: #1E1E1E;
 $color-bg: #ffffff;
 $color-bg-alt: #f3f4f6;
@@ -34,6 +35,7 @@ $container-pad: 16px;
 $bp-mobile: 576px;
 $bp-tablet: 768px;
 $bp-desktop: 1024px;
+$bp-wide: 1280px;
 
 @keyframes flyIn {
   0% {

@@ -88,13 +88,14 @@
 // Секция формы заявки (две белые карточки на светлом фоне)
 .request {
   background-color: $palette-off-white;
+
   &__inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     align-items: start;
 
-    @media (max-width: 900px) {
+    @media (max-width: 992px) {
       grid-template-columns: 1fr;
     }
   }
@@ -180,6 +181,10 @@
     flex-wrap: wrap;
     gap: 16px;
     margin-bottom: 32px;
+
+    @media (max-width: $bp-desktop) {
+      gap: 8px;
+    }
   }
 
   &__tab {
@@ -265,9 +270,11 @@
   border-radius: 32px;
   padding: 48px;
   min-height: 100%;
-  @media (max-width: 576px) {
+
+  @media (max-width: $bp-desktop) {
     padding: 24px;
   }
+
 
   input[type='text'],
   input[type='tel'],

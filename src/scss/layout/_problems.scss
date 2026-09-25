@@ -25,7 +25,7 @@
     gap: 20px;
     text-align: left;
 
-    @media (max-width: 900px) {
+    @media (max-width: $bp-tablet) {
       grid-template-columns: 1fr;
     }
   }

@@ -7,14 +7,18 @@
   border-radius: 50px;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.2s ease;
+  transition: all 0.25s ease;
 
   &--primary {
     background-color: $color-primary;
+    border: 1px solid transparent;
     color: #fff;
 
     &:hover {
       background-color: $color-primary-dark;
+    }
+    &:active {
+      background-color: $color-primary-dark-active;
     }
   }
 }
@@ -39,5 +43,10 @@
     background: $palette-black;
     color: $palette-white;
     border-color: $palette-black;
+  }
+  &:active {
+    background: $palette-gray-dark;
+    color: $palette-white;
+    border-color:  $palette-gray-dark;
   }
 }

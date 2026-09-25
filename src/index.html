@@ -11,19 +11,29 @@
 <body>
   <!-- header -->
   <header class="header">
-    <div class="container header__inner">
-      <a href="/" class="header__logo">
-        <img src="./img/logo.svg" alt="Logo" />
-      </a>
-      <nav class="nav">
-        <a href="#about">Что мы решаем</a>
-        <a href="#services">Ошибки сайта</a>
-        <a href="#contacts">Этапы работы</a>
-        <a href="#contacts">Почему мы</a>
-        <a href="#contacts">Стоимость</a>
-        <a href="#contacts">Вопросы</a>
-      </nav>
-      <button class="btn btn--primary">Оставить заявку</button>
+    <div class="container">
+      <div class="header__inner">
+        <a href="/" class="header__logo">
+          <img src="./img/logo.svg" alt="Logo" />
+        </a>
+        <nav class="nav" id="header-nav">
+          <a href="#about">Что мы решаем</a>
+          <a href="#services">Ошибки сайта</a>
+          <a href="#contacts">Этапы работы</a>
+          <a href="#contacts">Почему мы</a>
+          <a href="#contacts">Стоимость</a>
+          <a href="#contacts">Вопросы</a>
+        </nav>
+       
+        <button class="btn btn--primary">Оставить заявку</button>
+
+         <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="header-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
     </div>
   </header>
 
@@ -63,6 +73,16 @@
       <div class="hero-animated-item item-7">
         <img src="./img/hero-item-2.webp" alt="" />
       </div>
+    </div>
+    <div class="mobile-hero-animation">
+      <div class="mobile-hero-animation-img_wrap">
+        <img class="mobile-hero-animation-img" src="./img/uikit-button.webp" alt="">
+        <div class="mobile-hero-animation__spinner">
+          <i></i><i></i><i></i><i></i>
+          <i></i><i></i><i></i><i></i>
+        </div>
+      </div>
+      <img class="cursor-img" src="./img/cursor.webp" alt="">
     </div>
   </section>
 
@@ -484,7 +504,7 @@
               работы и покажем как их можно исправить.</p>
             <div class="cta__buttons">
               <button class="btn btn--primary">Оставить заявку</button>
-              <button class="btn btn--outline cta__btn-outline">Бесплатный аудит</button>
+              <button class="btn btn--outline">Бесплатный аудит</button>
             </div>
           </div>
           <div class="cta__img cta__img--right"></div>

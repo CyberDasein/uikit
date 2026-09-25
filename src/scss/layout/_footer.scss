@@ -14,8 +14,10 @@
     gap: 48px;
     padding-block: 64px 48px;
 
-    @media (max-width: 900px) {
+    @media (max-width: 992px) {
       grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      padding-block: 48px 32px;
     }
 
     @media (max-width: 576px) {
