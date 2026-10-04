@@ -1,3 +1,5 @@
+@use '../abstracts/variables'as *;
+
 // Секция «Стоимость доработки сайта»
 .pricing {
   text-align: center;
@@ -30,24 +32,48 @@
   &__audit {
     display: flex;
     flex-direction: column;
-    background: $palette-black;
+    background-color: $palette-black;
     color: $palette-white;
     border-radius: 20px;
     padding: 28px 24px;
     overflow: hidden;
     position: relative;
 
+    &:hover {
+      &::before {
+        transform: translate3d(2%, -2%, 0);
+      }
+
+      &::after {
+        top: 60%;
+      }
+    }
+
     &::before {
       content: '';
       position: absolute;
+      inset: -8%;
+      background: url("../img/audit-form-bg.webp") center / cover no-repeat;
+      transition: transform 0.5s ease;
+      pointer-events: none;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 150px;
+      height: 150px;
       inset: 0;
-      background-image: url("../img/audit-form-bg.webp");
-      background-size: cover;
+      background-image: url("../img/cursor.webp");
+      background-size: contain;
       background-repeat: no-repeat;
       pointer-events: none;
+      top: 50%;
+      left: 25%;
+      transition: all 0.5s ease;
       z-index: 0;
 
-      @media (max-width: $bp-desktop) {
+      @media (max-width: $bp-mobile) {
         display: none;
       }
     }

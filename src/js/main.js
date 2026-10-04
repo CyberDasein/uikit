@@ -59,9 +59,9 @@ const contactFieldConfig = {
     placeholder: "@username",
   },
   whatsapp: {
-    label: "Ваш номер в Ватсапе",
+    label: "Ваш номер в WhatsApp",
     type: "tel",
-    placeholder: "+7-___-___-___",
+    placeholder: "+7 (___) ___-__-__",
   },
   email: {
     label: "Ваша электронная почта",
@@ -81,8 +81,86 @@ requestTabs.forEach((tab) => {
     contactLabel.firstChild.textContent = config.label;
     contactInput.type = config.type;
     contactInput.placeholder = config.placeholder;
-    contactInput.style.borderColor = "";
+    contactInput.required = true;
+    contactInput.value = "";
+    contactInput.removeAttribute("aria-invalid");
+    if (tab.dataset.contact === "whatsapp") {
+      contactInput.pattern = "\\+7 \\(\\d{3}\\) \\d{3}-\\d{2}-\\d{2}";
+      contactInput.inputMode = "tel";
+      contactInput.autocomplete = "tel";
+    } else {
+      contactInput.removeAttribute("pattern");
+      contactInput.removeAttribute("inputmode");
+      contactInput.removeAttribute("autocomplete");
+    }
   });
+});
+
+// Маска номера: +7 (999) 999-99-99. При вставке принимаем также 8/7 + 10 цифр.
+function phoneDigits(value) {
+  const digits = value.replace(/\D/g, "");
+  if (value.startsWith("+7") || (digits.length === 11 && /^[78]/.test(digits))) {
+    return digits.slice(1, 11);
+  }
+  return digits.slice(0, 10);
+}
+
+function formatPhone(digits) {
+  if (!digits) return "";
+  let result = "+7 (" + digits.slice(0, 3);
+  if (digits.length >= 3) result += ")";
+  if (digits.length > 3) result += ` ${digits.slice(3, 6)}`;
+  if (digits.length > 6) result += "-" + digits.slice(6, 8);
+  if (digits.length > 8) result += "-" + digits.slice(8, 10);
+  return result;
+}
+
+contactInput?.addEventListener("keydown", (e) => {
+  if (contactInput.type !== "tel" || e.key !== "Backspace" ||
+    contactInput.selectionStart !== contactInput.selectionEnd) return;
+  const caret = contactInput.selectionStart;
+  if (caret <= 4 && contactInput.value) {
+    e.preventDefault();
+    contactInput.value = "";
+    contactInput.dispatchEvent(new Event("input", { bubbles: true }));
+    return;
+  }
+  if (/\D/.test(contactInput.value[caret - 1])) {
+    e.preventDefault();
+    const digits = phoneDigits(contactInput.value);
+    const precedingDigits = phoneDigits(contactInput.value.slice(0, caret)).length;
+    contactInput.value = formatPhone(
+      digits.slice(0, precedingDigits - 1) + digits.slice(precedingDigits)
+    );
+    const position = formatPhone(digits.slice(0, precedingDigits - 1)).length;
+    contactInput.setSelectionRange(position, position);
+    contactInput.dispatchEvent(new Event("input", { bubbles: true }));
+  }
+});
+
+contactInput?.addEventListener("input", () => {
+  if (contactInput.type !== "tel") return;
+  const oldValue = contactInput.value;
+  if (oldValue === "7" || oldValue === "8") {
+    contactInput.value = "+7 (";
+    return;
+  }
+  const oldCaret = contactInput.selectionStart;
+  const beforeCaret = phoneDigits(oldValue.slice(0, oldCaret)).length;
+  const formatted = formatPhone(phoneDigits(oldValue));
+  contactInput.value = formatted;
+
+  if (oldCaret === oldValue.length) {
+    contactInput.setSelectionRange(formatted.length, formatted.length);
+  } else {
+    let caret = formatted ? 4 : 0;
+    let count = 0;
+    for (let i = 4; i < formatted.length && count < beforeCaret; i++) {
+      if (/\d/.test(formatted[i])) count++;
+      caret = i + 1;
+    }
+    contactInput.setSelectionRange(caret, caret);
+  }
 });
 
 // Форма заявки — простая обработка (без бэкенда)
@@ -91,24 +169,44 @@ const requestForm = document.querySelector(".request__form");
 requestForm?.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const fields = requestForm.querySelectorAll(
-    "input[type=text], input[type=tel], input[type=email]"
-  );
-  let valid = true;
+  const fields = requestForm.querySelectorAll("input, textarea");
+  let firstInvalid = null;
 
   fields.forEach((field) => {
-    if (!field.value.trim()) {
-      valid = false;
-      field.style.borderColor = "#d92d20";
+    const invalid = !field.checkValidity() ||
+      (field.required && field.type !== "checkbox" && !field.value.trim());
+    if (invalid) {
+      field.setAttribute("aria-invalid", "true");
+      firstInvalid ??= field;
     } else {
-      field.style.borderColor = "";
+      field.removeAttribute("aria-invalid");
     }
   });
 
-  if (!valid) return;
+  if (firstInvalid) {
+    firstInvalid.focus();
+    return;
+  }
 
   const btn = requestForm.querySelector(".request__submit");
-  btn.textContent = "Заявка отправлена ✓";
+  btn.textContent = "Заявка отправлена  ✓";
   btn.disabled = true;
   requestForm.reset();
+});
+
+requestForm?.addEventListener("input", (e) => {
+  const field = e.target;
+  if (field.matches("input, textarea") && field.getAttribute("aria-invalid") === "true") {
+    if (field.checkValidity() &&
+      (!field.required || field.type === "checkbox" || field.value.trim())) {
+      field.removeAttribute("aria-invalid");
+    }
+  }
+});
+
+requestForm?.addEventListener("change", (e) => {
+  const field = e.target;
+  if (field.matches("input, textarea") && field.checkValidity()) {
+    field.removeAttribute("aria-invalid");
+  }
 });

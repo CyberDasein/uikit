@@ -1,19 +1,18 @@
-// Точка входа: импорт стилей
-@import 'abstracts/variables';
-@import 'abstracts/mixins';
-@import 'base/fonts';
-@import 'base/reset';
-@import 'base/typography';
-@import 'components/buttons';
-@import 'components/container';
-@import 'layout/header';
-@import 'layout/footer';
-@import 'layout/sections';
-@import 'layout/problems';
-@import 'layout/familiar';
-@import 'layout/rework';
-@import 'layout/profit-steps';
-@import 'layout/why';
-@import 'layout/pricing';
-@import 'layout/faq-request';
-@import 'layout/responsive';
+// Точка входа: подключение модулей стилей
+@use 'abstracts/variables';
+@use 'base/fonts';
+@use 'base/reset';
+@use 'base/typography';
+@use 'components/buttons';
+@use 'components/container';
+@use 'layout/header';
+@use 'layout/footer';
+@use 'layout/sections';
+@use 'layout/problems';
+@use 'layout/familiar';
+@use 'layout/rework';
+@use 'layout/profit-steps';
+@use 'layout/why';
+@use 'layout/pricing';
+@use 'layout/faq-request';
+@use 'layout/responsive';

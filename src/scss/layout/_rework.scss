@@ -1,3 +1,5 @@
+@use '../abstracts/variables' as *;
+
 // Секция «Не каждый сайт нужно делать заново»
 .rework {
   text-align: center;
@@ -7,7 +9,7 @@
   }
 
   &__subtitle {
-    max-width: 60%;
+    max-width: 65%;
     margin: 0 auto 60px;
   }
 
@@ -71,7 +73,7 @@
   position: relative;
   &__label {
     width: 100%;
-    max-width: 50%;
+    max-width: 30%;
     position: absolute;
     padding: 10px 16px;
     border-radius: 12px;
@@ -80,7 +82,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    font-weight: 500;
+    font-weight: 600;
 
     svg {
       width: 24px;
@@ -98,26 +100,29 @@
 
   &__frame {
     border-radius: 32px;
+    background-color: $palette-off-white;
+    background-repeat: no-repeat;
+
     &--bad {
-      background: $palette-off-white;
+      background-image: url("./img/img-work-before.webp");
+      background-size: 125%;
+      background-position: 5% 40%;
     }
 
     &--good {
-      background: #e0ecff;
+      background-image: url("./img/img-work-after.webp");
+      background-size: 130%;
+      background-position: 22% 30%;
     }
   }
 }
 
 .rework-mock {
-  background: $palette-off-white;
   border-radius: 32px;
   text-align: left;
-
-
-  &__img {
-    min-height: 435px;
-    border-radius: 32px;
-  }
+  min-height: 435px;
+  border-radius: 32px;
+  overflow: hidden;
 
   &__btn {
     display: inline-block;

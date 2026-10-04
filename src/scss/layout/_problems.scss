@@ -1,3 +1,6 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 // Секция "Проблемы, которые мы решаем"
 .problems {
   text-align: center;
