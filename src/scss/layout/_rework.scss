@@ -73,7 +73,7 @@
   position: relative;
   &__label {
     width: 100%;
-    max-width: 30%;
+    max-width: max-content;
     position: absolute;
     padding: 10px 16px;
     border-radius: 12px;
@@ -82,7 +82,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    font-weight: 600;
+    font-weight: 700;
 
     svg {
       width: 24px;
@@ -102,17 +102,17 @@
     border-radius: 32px;
     background-color: $palette-off-white;
     background-repeat: no-repeat;
+    background-position: 0% 0%;
+    background-size: contain;
 
     &--bad {
       background-image: url("./img/img-work-before.webp");
-      background-size: 125%;
-      background-position: 5% 40%;
+      background-size: 105%;
+      background-position: 0% 25%
     }
 
     &--good {
-      background-image: url("./img/img-work-after.webp");
-      background-size: 130%;
-      background-position: 22% 30%;
+      background-image: url("./img/img-work-after-2.webp");
     }
   }
 }

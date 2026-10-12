@@ -63,7 +63,6 @@
   border-radius: 36px;
   padding: 40px;
   gap: 32px;
-  align-items: center;
 
   @media (max-width: 992px) {
     flex-direction: column;
@@ -72,7 +71,11 @@
 
   &.is-active {
     display: grid;
-    grid-template-columns: 1fr 1.4fr;
+    grid-template-columns: 1fr 65%;
+  }
+
+  &__content {
+    max-width: 380px;
   }
 
   &__heading {
@@ -128,9 +131,15 @@
   }
 
   &__frame {
-    background: #fde2ec;
-    border-radius: 20px;
-    padding: 20px;
+    background: #fff;
+    border-radius: 28px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
 
     &--bad .familiar-mock {
       opacity: 0.85;
