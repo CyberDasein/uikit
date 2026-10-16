@@ -28,12 +28,32 @@
     }
   }
 
+  &__small-task {
+    margin: 32px auto 0;
+    padding: 28px 24px;
+    border-radius: 20px;
+    background: $palette-white;
+    text-align: left;
+  }
+
+  &__small-task-title {
+    margin-bottom: 8px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  &__small-task-price {
+    margin-bottom: 8px;
+    color: $palette-blue;
+    font-weight: 700;
+  }
+
   // тёмная карточка "Бесплатный аудит" — четвёртая в сетке
   &__audit {
     display: flex;
     flex-direction: column;
     background-color: $palette-black;
-    color: $palette-white;
+    color: rgba($palette-white, 0.9);
     border-radius: 20px;
     padding: 28px 24px;
     overflow: hidden;
@@ -59,23 +79,23 @@
     }
 
     &::after {
-      content: '';
-      position: absolute;
-      width: 150px;
-      height: 150px;
-      inset: 0;
-      background-image: url("../img/cursor.webp");
-      background-size: contain;
-      background-repeat: no-repeat;
-      pointer-events: none;
-      top: 50%;
-      left: 25%;
-      transition: all 0.5s ease;
-      z-index: 0;
+      // content: '';
+      // position: absolute;
+      // width: 150px;
+      // height: 150px;
+      // inset: 0;
+      // background-image: url("../img/cursor.webp");
+      // background-size: contain;
+      // background-repeat: no-repeat;
+      // pointer-events: none;
+      // top: 50%;
+      // left: 25%;
+      // transition: all 0.5s ease;
+      // z-index: 0;
 
-      @media (max-width: $bp-mobile) {
-        display: none;
-      }
+      // @media (max-width: $bp-mobile) {
+      //   display: none;
+      // }
     }
   }
 
@@ -83,19 +103,41 @@
     position: relative;
     text-transform: uppercase;
     margin-bottom: 16px;
+    color: $palette-white;
   }
 
   &__audit-text {
     position: relative;
     font-weight: 500;
-    color: white;
+    color: rgba($palette-white, 0.9);
+
+    &.mt-a {
+      margin-top: auto;
+      font-size: 14px;
+      color: rgba($palette-white, 0.8);
+    }
+  }
+
+  &__audit .price-card__list {
+    position: relative;
+    margin-bottom: 24px;
+    margin-top: 24px;
+    margin-left: 0;
+    padding-left: 0;
+    li {
+      list-style-type: none;
+      padding-left: 0;
+      &::before {
+        display: none;
+      }
+    }
   }
 
 
   &__audit-btn {
     position: relative;
     width: 100%;
-    margin-top: auto;
+    margin-top: 24px;
   }
 }
 
@@ -103,8 +145,13 @@
   display: flex;
   flex-direction: column;
   background: $palette-white;
+  border: 1px solid $palette-lavender-light;
   border-radius: 20px;
   padding: 28px 24px;
+
+  &:hover &__name {
+    color: $palette-blue;
+  }
 
   &__head {
     display: flex;
@@ -118,7 +165,9 @@
     font-weight: 500;
   }
 
-  &__name {}
+  &__name {
+    transition: color 0.3s ease;
+  }
 
   &__badge {
     color: $palette-blue;

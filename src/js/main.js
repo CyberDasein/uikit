@@ -1,4 +1,5 @@
 import "../scss/main.scss";
+import "./animation"
 
 // Мобильное меню header
 const headerInner = document.querySelector(".header__inner");
@@ -34,6 +35,31 @@ tabs.forEach((tab) => {
       .querySelector(`.familiar-panel[data-panel="${target}"]`)
       ?.classList.add("is-active");
   });
+});
+
+// Лупа для детального просмотра изображений в сравнении
+const reworkFrames = document.querySelectorAll(".rework-compare__frame");
+
+reworkFrames.forEach((frame) => {
+  const lens = frame.querySelector(".rework-compare__lens");
+  if (!lens) return;
+
+  const updateLens = (event) => {
+    const frameRect = frame.getBoundingClientRect();
+    const x = event.clientX - frameRect.left;
+    const y = event.clientY - frameRect.top;
+    const zoom = 2.5;
+    const lensSize = lens.offsetWidth;
+
+    lens.style.left = `${x}px`;
+    lens.style.top = `${y}px`;
+    lens.style.backgroundImage = getComputedStyle(frame).backgroundImage;
+    lens.style.backgroundSize = `${frameRect.width * zoom}px ${frameRect.height * zoom}px`;
+    lens.style.backgroundPosition = `${lensSize / 2 - x * zoom}px ${lensSize / 2 - y * zoom}px`;
+  };
+
+  frame.addEventListener("pointerenter", updateLens);
+  frame.addEventListener("pointermove", updateLens);
 });
 
 // Пример: плавный скролл по анкорам

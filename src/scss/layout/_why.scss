@@ -94,7 +94,21 @@
   border: 2px solid $palette-lavender-light;
   border-radius: 30px;
   padding: 36px 32px;
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 
+  &:hover {
+    transform: translateY(-6px);
+    border-color: $palette-blue;
+    box-shadow: 0 12px 28px rgba($palette-black, 0.08);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+
+    &:hover {
+      transform: none;
+    }
+  }
 
   &:nth-child(4) {
     position: relative;

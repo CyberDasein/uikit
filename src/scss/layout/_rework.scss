@@ -71,6 +71,7 @@
 
 .rework-compare {
   position: relative;
+
   &__label {
     width: 100%;
     max-width: max-content;
@@ -83,7 +84,7 @@
     align-items: center;
     justify-content: space-between;
     font-weight: 700;
-
+    z-index: 10;
     svg {
       width: 24px;
       height: 24px;
@@ -99,20 +100,66 @@
   }
 
   &__frame {
+    position: relative;
     border-radius: 32px;
     background-color: $palette-off-white;
     background-repeat: no-repeat;
     background-position: 0% 0%;
     background-size: contain;
+    overflow: hidden;
+    cursor: none;
 
     &--bad {
       background-image: url("./img/img-work-before.webp");
       background-size: 105%;
-      background-position: 0% 25%
+      background-position: 0% 25%;
+
+      @media (max-width: $bp-mobile) {
+        background-size: cover;
+        background-position: center;
+      }
     }
 
     &--good {
       background-image: url("./img/img-work-after-2.webp");
+
+      @media (max-width: $bp-mobile) {
+        background-size: cover;
+        background-position: center;
+      }
+    }
+  }
+
+  &__lens {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    border: 3px solid $palette-white;
+    border-radius: 50%;
+    box-shadow: 0 2px 12px rgb(0 0 0 / 35%);
+    background-color: $palette-off-white;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+    transition: opacity 140ms ease, transform 140ms ease;
+
+    .rework-compare__frame:hover & {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  @media (hover: none), (pointer: coarse) {
+    &__frame {
+      cursor: auto;
+    }
+
+    &__lens {
+      display: none;
     }
   }
 }
@@ -120,7 +167,7 @@
 .rework-mock {
   border-radius: 32px;
   text-align: left;
-  min-height: 435px;
+  min-height: 420px;
   border-radius: 32px;
   overflow: hidden;
 
@@ -141,6 +188,11 @@
   border: 2px solid #DCDFE9;
   border-radius: 16px;
   padding: 24px;
+  transition: border-color 0.25s ease;
+
+  &:hover {
+    border-color: $palette-blue;
+  }
 
   &__title {
     font-size: 16px;

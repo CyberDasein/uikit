@@ -1,4 +1,5 @@
-@use '../abstracts/variables' as *;
+@use '../abstracts/variables'as *;
+@use '../abstracts/mixins' as *;
 
 // Секция «Ошибки сайта = потеря прибыли»
 .profit {
@@ -51,15 +52,18 @@
     color: $palette-blue;
     margin-bottom: 16px;
   }
+
   &__img {
     display: flex;
     margin-top: auto;
     width: 100%;
+
     img {
       max-height: 250px;
     }
 
   }
+
   &__title {
     font-size: 24px;
     font-weight: 800;
@@ -74,6 +78,7 @@
 // Секция «Этапы работы с нами» (вертикальный список строк)
 .steps {
   background-color: $palette-off-white;
+
   &__title {
     text-align: center;
     text-transform: uppercase;
@@ -143,20 +148,29 @@
 // Секция «Давайте исправим ваш сайт» (CTA)
 .cta {
   padding-top: 120px;
+
   &__inner {
     position: relative;
     background: $palette-white;
     background-image: url("../img/cta-bg.webp");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-position: center;
+    background-size: cover;
     border-radius: 32px;
     padding: 40px 180px;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease;
 
     @media (max-width: 992px) {
       padding: 48px 24px;
+    }
+
+    @include mq($bp-mobile) {
+      &:hover {
+        background-position: 110% 90%;
+      }
     }
   }
 
@@ -184,6 +198,7 @@
     justify-content: center;
     gap: 16px;
   }
+
   .btn {
     min-width: 220px;
   }
