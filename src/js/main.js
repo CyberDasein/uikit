@@ -37,7 +37,91 @@ tabs.forEach((tab) => {
   });
 });
 
-// Лупа для детального просмотра изображений в сравнении
+// Слайдер сравнения «Плохо / Хорошо» в карточках familiar
+const familiarCompares = document.querySelectorAll(".familiar-panel__compare");
+
+const familiarMobile = window.matchMedia("(max-width: 768px)");
+
+familiarCompares.forEach((compare) => {
+  const items = [...compare.querySelectorAll(":scope > .familiar-compare")];
+  if (items.length !== 2) return;
+
+  const [badItem, goodItem] = items;
+  const badLabel = badItem.querySelector(".familiar-compare__label");
+  const goodLabel = goodItem.querySelector(".familiar-compare__label");
+  const badFrame = badItem.querySelector(".familiar-compare__frame");
+  const goodFrame = goodItem.querySelector(".familiar-compare__frame");
+  if (!badLabel || !goodLabel || !badFrame || !goodFrame) return;
+
+  if (!familiarMobile.matches) return;
+
+  const stage = document.createElement("div");
+  stage.className = "familiar-compare__stage";
+  stage.style.setProperty("--split", "50%");
+  stage.append(badFrame, goodFrame, badLabel, goodLabel);
+
+  const divider = document.createElement("div");
+  divider.className = "familiar-compare__divider";
+  divider.setAttribute("aria-hidden", "true");
+  stage.append(divider);
+
+  const slider = document.createElement("input");
+  slider.className = "familiar-compare__range";
+  slider.type = "range";
+  slider.min = "0";
+  slider.max = "100";
+  slider.value = "50";
+  slider.hidden = false;
+  slider.setAttribute("aria-label", "Сравнить плохой и хороший вариант");
+  slider.addEventListener("input", () => {
+    stage.style.setProperty("--split", `${slider.value}%`);
+  });
+  stage.append(slider);
+  compare.append(stage);
+});
+
+// Ползунок сравнения «До / После» в мобильной версии блока rework
+const reworkCompare = document.querySelector(".rework__compare");
+const reworkMobile = window.matchMedia("(max-width: 768px)");
+
+if (reworkCompare && reworkMobile.matches) {
+  const beforeItem = reworkCompare.querySelector(":scope > .rework-compare--before");
+  const afterItem = reworkCompare.querySelector(":scope > .rework-compare--after");
+
+  if (beforeItem && afterItem) {
+    const beforeLabel = beforeItem.querySelector(".rework-compare__label");
+    const afterLabel = afterItem.querySelector(".rework-compare__label");
+    const beforeFrame = beforeItem.querySelector(".rework-compare__frame");
+    const afterFrame = afterItem.querySelector(".rework-compare__frame");
+
+    if (beforeLabel && afterLabel && beforeFrame && afterFrame) {
+      const stage = document.createElement("div");
+      stage.className = "rework-compare__stage";
+      stage.style.setProperty("--split", "50%");
+      stage.append(beforeFrame, afterFrame, beforeLabel, afterLabel);
+
+      const divider = document.createElement("div");
+      divider.className = "rework-compare__divider";
+      divider.setAttribute("aria-hidden", "true");
+      stage.append(divider);
+
+      const slider = document.createElement("input");
+      slider.className = "rework-compare__range";
+      slider.type = "range";
+      slider.min = "0";
+      slider.max = "100";
+      slider.value = "50";
+      slider.setAttribute("aria-label", "Сравнить сайт до и после доработки");
+      slider.addEventListener("input", () => {
+        stage.style.setProperty("--split", `${slider.value}%`);
+      });
+      stage.append(slider);
+      reworkCompare.append(stage);
+    }
+  }
+}
+
+// Лупа для детального просмотра изображений в сравнении на десктопе
 const reworkFrames = document.querySelectorAll(".rework-compare__frame");
 
 reworkFrames.forEach((frame) => {

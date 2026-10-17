@@ -20,7 +20,7 @@
     margin: 0 auto 36px;
 
     @media (max-width: 700px) {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
     }
   }
 
@@ -190,9 +190,6 @@
   padding: 24px;
   transition: border-color 0.25s ease;
 
-  &:hover {
-    border-color: $palette-blue;
-  }
 
   &__title {
     font-size: 16px;

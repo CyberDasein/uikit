@@ -36,7 +36,7 @@ float ray(
   vec2 origin,
   float angle,
   float width,
-  float length,
+  float rayLength,
   float seed
 ) {
   vec2 axis = vec2(cos(angle), sin(angle));
@@ -68,12 +68,17 @@ float ray(
 
   // Растворение концов луча
   float fade =
-    smoothstep(-length * 0.65, -length * 0.22, along)
+    smoothstep(-rayLength * 0.65, -rayLength * 0.22, along)
     * (1.0 - smoothstep(
-        length * 0.25, length, along
+        rayLength * 0.25, rayLength, along
       ));
 
   return core * fade;
+}
+
+vec3 saturateColor(vec3 color, float amount) {
+  float luma = dot(color, vec3(0.2126, 0.7152, 0.0722));
+  return mix(vec3(luma), color, amount);
 }
 
 void main() {
@@ -120,71 +125,133 @@ void main() {
     c * 0.7 + d * 0.7;
 
   // -----------------------------------
-  // ЦВЕТА ИЗ ТВОЕГО ГРАДИЕНТА
+  // БАЗОВЫЕ ЦВЕТА ЛУЧЕЙ
   // -----------------------------------
 
-  // Основные цвета четырёх лучей
   vec3 color = (
-    a * 0.85 * vec3(26.0, 108.0, 255.0) +
-    b * 0.8  * vec3(87.0, 196.0, 255.0) +
-    c * 0.7  * vec3(61.0, 139.0, 255.0) +
-    d * 0.7  * vec3(111.0, 210.0, 255.0)
+    a * 0.85 * vec3(26.0, 108.0, 255.0) +   // #1a6cff
+    b * 0.8  * vec3(87.0, 196.0, 255.0) +   // #57c4ff
+    c * 0.7  * vec3(61.0, 139.0, 255.0) +   // #3d8bff
+    d * 0.7  * vec3(111.0, 210.0, 255.0)    // #6fd2ff
   ) / (max(strength, 0.001) * 255.0);
 
-  // #7dc4ff — мягкий голубой переход
+  // -----------------------------------
+  // ДОПОЛНИТЕЛЬНЫЕ НАСЫЩЕННЫЕ СИНИЕ ОТТЕНКИ
+  // -----------------------------------
+
+  // Усиление насыщенного синего
+  color = mix(
+    color,
+    vec3(26.0, 108.0, 255.0) / 255.0,
+    smoothstep(0.18, 1.05, strength) * 0.18
+  );
+
+  // Более живой ярко-синий
+  color = mix(
+    color,
+    vec3(61.0, 139.0, 255.0) / 255.0,
+    smoothstep(0.30, 1.20, strength) * 0.24
+  );
+
+  // Голубой переход
+  color = mix(
+    color,
+    vec3(87.0, 196.0, 255.0) / 255.0,
+    smoothstep(0.55, 1.45, strength) * 0.22
+  );
+
+  // Мягкий голубой
   color = mix(
     color,
     vec3(125.0, 196.0, 255.0) / 255.0,
-    smoothstep(0.35, 1.6, strength) * 0.25
+    smoothstep(0.75, 1.65, strength) * 0.18
   );
 
-  // #9fd8ff — осветление
+  // Осветление к ядру
   color = mix(
     color,
     vec3(159.0, 216.0, 255.0) / 255.0,
-    smoothstep(0.55, 1.4, strength) * 0.45
+    smoothstep(0.85, 1.75, strength) * 0.28
   );
 
-  // #cdeaff — светло-голубой
+  // Светло-голубой перед белым центром
   color = mix(
     color,
     vec3(205.0, 234.0, 255.0) / 255.0,
-    smoothstep(0.9, 1.75, strength) * 0.6
+    smoothstep(1.10, 2.00, strength) * 0.34
   );
 
-  // #ffffff — мягкие белые участки
-  // в местах максимальной интенсивности
+  // Белые участки — оставляем их заметными
   color = mix(
     color,
     vec3(1.0, 1.0, 1.0),
-    smoothstep(1.45, 2.4, strength) * 0.65
+    smoothstep(1.35, 2.45, strength) * 0.38
   );
 
+  // Дополнительное мягкое высветление самого горячего центра
+  color = mix(
+    color,
+    vec3(1.0, 1.0, 1.0),
+    smoothstep(2.00, 3.10, strength) * 0.18
+  );
+
+  // Немного повышаем насыщенность и яркость
+  color = saturateColor(color, 1.18);
+  color = clamp(color * 1.08, 0.0, 1.0);
+
   // -----------------------------------
-  // ПРОЗРАЧНОСТЬ
+  // ПРОЗРАЧНОСТЬ ЛУЧЕЙ
   // -----------------------------------
 
-  // Прозрачность за пределами лучей
   float alpha = smoothstep(
-  0.18,
-  0.95,
-  strength
-) * 0.80;
+    0.18,
+    0.95,
+    strength
+  ) * 0.82;
 
-float whiteIntensity = smoothstep(
+  float whiteIntensity = smoothstep(
     1.0,
     1.8,
     strength
-    );
+  );
 
-    alpha *= 1.0 - whiteIntensity * 0.15;
+  alpha *= 1.0 - whiteIntensity * 0.12;
 
-    // Полностью убираем пиксели за пределами лучей
-    if (alpha < 0.005) {
+  // -----------------------------------
+  // ПЛАВНОЕ ЗАТУХАНИЕ У КРАЁВ
+  // -----------------------------------
+
+  vec2 edgeDistance = min(
+    gl_FragCoord.xy,
+    u_res - gl_FragCoord.xy
+  );
+
+  float fadeSize = min(
+    u_res.x,
+    u_res.y
+  ) * 0.22;
+
+  float fadeX = smoothstep(
+    0.0,
+    fadeSize,
+    edgeDistance.x
+  );
+
+  float fadeY = smoothstep(
+    0.0,
+    fadeSize,
+    edgeDistance.y
+  );
+
+  float edgeFade = fadeX * fadeY;
+  alpha *= edgeFade;
+
+  if (alpha < 0.005) {
     discard;
-    }
-    gl_FragColor = vec4(color, alpha);
-    }
+  }
+
+  gl_FragColor = vec4(color, alpha);
+}
 `;
 
   // Компиляция шейдеров
@@ -204,7 +271,6 @@ float whiteIntensity = smoothstep(
   }
 
   const vertexShader = createShader(gl.VERTEX_SHADER, vertexShaderSource);
-
   const fragmentShader = createShader(gl.FRAGMENT_SHADER, fragmentShaderSource);
 
   if (!vertexShader || !fragmentShader) return;
@@ -224,7 +290,10 @@ float whiteIntensity = smoothstep(
   gl.useProgram(program);
 
   // Геометрия на весь экран
-  const vertices = new Float32Array([-1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 1]);
+  const vertices = new Float32Array([
+    -1, -1, 1, -1, -1, 1,
+    -1,  1, 1, -1, 1, 1
+  ]);
 
   const buffer = gl.createBuffer();
 
@@ -237,11 +306,10 @@ float whiteIntensity = smoothstep(
   gl.vertexAttribPointer(position, 2, gl.FLOAT, false, 0, 0);
 
   const resolution = gl.getUniformLocation(program, "u_res");
-
   const time = gl.getUniformLocation(program, "u_time");
 
   const reducedMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)",
+    "(prefers-reduced-motion: reduce)"
   ).matches;
 
   const start = performance.now();
@@ -254,9 +322,15 @@ float whiteIntensity = smoothstep(
 
     const dpr = Math.min(window.devicePixelRatio || 1, 1.35);
 
-    const width = Math.round(canvas.clientWidth * dpr);
+    const width = Math.max(
+      1,
+      Math.round(canvas.clientWidth * dpr)
+    );
 
-    const height = Math.round(canvas.clientHeight * dpr);
+    const height = Math.max(
+      1,
+      Math.round(canvas.clientHeight * dpr)
+    );
 
     if (canvas.width !== width || canvas.height !== height) {
       canvas.width = width;
@@ -265,7 +339,6 @@ float whiteIntensity = smoothstep(
     }
 
     gl.uniform2f(resolution, width, height);
-
     gl.uniform1f(time, reducedMotion ? 3 : (now - start) * 0.001);
 
     gl.clearColor(0, 0, 0, 0);
@@ -297,6 +370,6 @@ float whiteIntensity = smoothstep(
       cancelAnimationFrame(animationId);
       observer.disconnect();
     },
-    { once: true },
+    { once: true }
   );
 })();
