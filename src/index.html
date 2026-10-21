@@ -4,7 +4,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UI KIT</title>
+  <title>Доработка сайтов: дизайн, скорость и адаптив — UI-KIT</title>
+  <meta name="description"
+    content="UI-KIT: исправляем ошибки на сайтах, обновляем дизайн, ускоряем загрузку и улучшаем мобильную версию. Начните с бесплатного аудита вашего сайта." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:site_name" content="UI-KIT" />
+  <meta property="og:title" content="Доработка сайтов: дизайн, скорость и адаптив — UI-KIT" />
+  <meta property="og:description"
+    content="Исправляем ошибки, обновляем дизайн и ускоряем сайты. Получите бесплатный аудит и узнайте, что можно улучшить." />
+  <meta property="og:url" content="/" />
+  <meta property="og:image" content="/social-preview.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="UI-KIT — доработка сайтов, дизайн, скорость и мобильная адаптация. Бесплатный аудит сайта." />
+  <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+  <meta name="theme-color" content="#015aff" />
   <link rel="stylesheet" href="/scss/main.scss" />
 </head>
 
@@ -17,15 +35,15 @@
           <img src="./img/logo.svg" alt="Logo" />
         </a>
         <nav class="nav" id="header-nav">
-          <a href="#about">Что мы решаем</a>
-          <a href="#services">Ошибки сайта</a>
-          <a href="#contacts">Этапы работы</a>
-          <a href="#contacts">Почему мы</a>
-          <a href="#contacts">Стоимость</a>
-          <a href="#contacts">Вопросы</a>
+          <a href="#problems">Что мы решаем</a>
+          <a href="#examples">Ошибки сайта</a>
+          <a href="#steps">Этапы работы</a>
+          <a href="#why">Почему мы</a>
+          <a href="#pricing">Стоимость</a>
+          <a href="#faq">Вопросы</a>
         </nav>
 
-        <button class="btn btn--primary">Оставить заявку</button>
+        <a class="btn btn--primary" href="#request">Оставить заявку</a>
 
         <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false"
           aria-controls="header-nav">
@@ -39,18 +57,18 @@
   </header>
 
   <!-- hero -->
-  <section class="hero">
+  <section id="hero" class="hero">
     <div class="container">
       <h1 class="hero__title">
-        Исправляем сайты: Делаем их быстрее, красивее и удобнее
+        Преображаем сайты: делаем их быстрее, красивее и удобнее
       </h1>
       <p class="hero__subtitle">
         Исправляем ошибки, ускоряем загрузку, делаем интерфейс удобным, <br />
         современным и привлекательным, Чтобы принести вашему сайту больше
         заявок.
       </p>
-      <button class="btn btn--primary">Оставить заявку</button>
-      <button class="btn btn--outline">Бесплатный аудит</button>
+      <a class="btn btn--primary" href="#request">Получить бесплатный аудит</a>
+      <a class="btn btn--outline" href="#examples">Посмотреть примеры</a>
     </div>
     <div class="hero-animated-items">
       <div class="hero-animated-item item-1">
@@ -85,7 +103,7 @@
   </section>
 
   <!-- problems -->
-  <section id="about" class="problems section">
+  <section id="problems" class="problems section">
     <div class="container-small">
       <h2 class="problems__title">Проблемы, которые мы решаем</h2>
       <p class="problems__subtitle">
@@ -97,7 +115,7 @@
         <div class="problem-card">
           <div class="problem-card__tag">
             <span>Ошибки верстки</span>
-            <img src="./img/Code.svg" alt="code">
+            <img loading="lazy" decoding="async" src="./img/Code.svg" alt="code">
           </div>
           <h3 class="problem-card__heading">Кривые блоки<br />и отступы</h3>
           <ul class="problem-card__list">
@@ -112,7 +130,7 @@
         <div class="problem-card">
           <div class="problem-card__tag">
             <span>Слабый UI/UX-дизайн</span>
-            <img src="./img/Image.svg" alt="design">
+            <img loading="lazy" decoding="async" src="./img/Image.svg" alt="design">
           </div>
           <h3 class="problem-card__heading">
             Проблемы с визуалом<br />и стилем
@@ -134,7 +152,7 @@
         <div class="problem-card">
           <div class="problem-card__tag">
             <span>Потери скорости загрузки</span>
-            <img src="./img/Loader.svg" alt="load">
+            <img loading="lazy" decoding="async" src="./img/Loader.svg" alt="load">
           </div>
           <h3 class="problem-card__heading">Медленная работа<br />сайта</h3>
           <ul class="problem-card__list">
@@ -150,7 +168,7 @@
         <div class="problem-card">
           <div class="problem-card__tag">
             <span>Проблемы с текстом и читаемостью</span>
-            <img src="./img/TextT.svg" alt="text">
+            <img loading="lazy" decoding="async" src="./img/TextT.svg" alt="text">
           </div>
           <h3 class="problem-card__heading">Плохой контент<br />и шрифты</h3>
           <ul class="problem-card__list">
@@ -165,7 +183,7 @@
   </section>
 
   <!-- familiar / tabs -->
-  <section id="services" class="familiar section">
+  <section id="examples" class="familiar section">
     <div class="container">
       <h2 class="familiar__title">Возможно, вам это знакомо</h2>
       <p class="familiar__subtitle">
@@ -198,7 +216,7 @@
           Отсутствие стиля
         </button>
         <button class="familiar__tab" role="tab" data-tab="8">
-          Меленькие иконки
+          Маленькие кнопки
         </button>
         <button class="familiar__tab" role="tab" data-tab="9">
           Видео не грузится
@@ -227,19 +245,19 @@
             <div class="familiar-compare">
               <div class="familiar-compare__label familiar-compare__label--bad">
                 Плохо
-                <img src="./img/tab-bad.svg" alt="" width="24" height="24" />
+                <img loading="lazy" decoding="async" src="./img/tab-bad.svg" alt="" width="24" height="24" />
               </div>
               <div class="familiar-compare__frame familiar-compare__frame--bad">
-                <img src="./img/text-bad.webp" alt="Пример плохой вёрстки с длинным текстом" />
+                <img loading="lazy" decoding="async" src="./img/text-bad.webp" alt="Пример плохой вёрстки с длинным текстом" />
               </div>
             </div>
             <div class="familiar-compare">
               <div class="familiar-compare__label familiar-compare__label--good">
                 Хорошо
-                <img src="./img/tab-good.svg" alt="" width="24" height="24" />
+                <img loading="lazy" decoding="async" src="./img/tab-good.svg" alt="" width="24" height="24" />
               </div>
               <div class="familiar-compare__frame familiar-compare__frame--good">
-                <img src="./img/text-good.webp" alt="Пример хорошей вёрстки с текстом" />
+                <img loading="lazy" decoding="async" src="./img/text-good.webp" alt="Пример хорошей вёрстки с текстом" />
               </div>
             </div>
           </div>
@@ -261,19 +279,19 @@
             <div class="familiar-compare">
               <div class="familiar-compare__label familiar-compare__label--bad">
                 Плохо
-                <img src="./img/tab-bad.svg" alt="" width="24" height="24" />
+                <img loading="lazy" decoding="async" src="./img/tab-bad.svg" alt="" width="24" height="24" />
               </div>
               <div class="familiar-compare__frame familiar-compare__frame--bad">
-                <img src="./img/text-bg-bad.webp" alt="Пример плохого текста и фона" />
+                <img loading="lazy" decoding="async" src="./img/text-bg-bad.webp" alt="Пример плохого текста и фона" />
               </div>
             </div>
             <div class="familiar-compare">
               <div class="familiar-compare__label familiar-compare__label--good">
                 Хорошо
-                <img src="./img/tab-good.svg" alt="" width="24" height="24" />
+                <img loading="lazy" decoding="async" src="./img/tab-good.svg" alt="" width="24" height="24" />
               </div>
               <div class="familiar-compare__frame familiar-compare__frame--good">
-                <img src="./img/text-bg-good.webp" alt="Пример хорошего текста и фона" />
+                <img loading="lazy" decoding="async" src="./img/text-bg-good.webp" alt="Пример хорошего текста и фона" />
               </div>
             </div>
           </div>
@@ -294,19 +312,19 @@
             <div class="familiar-compare">
               <div class="familiar-compare__label familiar-compare__label--bad">
                 Плохо
-                <img src="./img/tab-bad.svg" alt="" width="24" height="24" />
+                <img loading="lazy" decoding="async" src="./img/tab-bad.svg" alt="" width="24" height="24" />
               </div>
               <div class="familiar-compare__frame familiar-compare__frame--bad">
-                <img src="./img/padding-bad.webp" alt="Пример плохих отступов и сетки" />
+                <img loading="lazy" decoding="async" src="./img/padding-bad.webp" alt="Пример плохих отступов и сетки" />
               </div>
             </div>
             <div class="familiar-compare">
               <div class="familiar-compare__label familiar-compare__label--good">
                 Хорошо
-                <img src="./img/tab-good.svg" alt="" width="24" height="24" />
+                <img loading="lazy" decoding="async" src="./img/tab-good.svg" alt="" width="24" height="24" />
               </div>
               <div class="familiar-compare__frame familiar-compare__frame--good">
-                <img src="./img/padding-good.webp" alt="Пример хороших отступов и сетки" />
+                <img loading="lazy" decoding="async" src="./img/padding-good.webp" alt="Пример хороших отступов и сетки" />
               </div>
             </div>
           </div>
@@ -329,19 +347,19 @@
             <div class="familiar-compare">
               <div class="familiar-compare__label familiar-compare__label--bad">
                 Плохо
-                <img src="./img/tab-bad.svg" alt="" width="24" height="24" />
+                <img loading="lazy" decoding="async" src="./img/tab-bad.svg" alt="" width="24" height="24" />
               </div>
               <div class="familiar-compare__frame familiar-compare__frame--bad">
-                <img src="./img/01-text-bad.webp" alt="Пример перегруженного текстом блока" />
+                <img loading="lazy" decoding="async" src="./img/01-text-bad.webp" alt="Пример перегруженного текстом блока" />
               </div>
             </div>
             <div class="familiar-compare">
               <div class="familiar-compare__label familiar-compare__label--good">
                 Хорошо
-                <img src="./img/tab-good.svg" alt="" width="24" height="24" />
+                <img loading="lazy" decoding="async" src="./img/tab-good.svg" alt="" width="24" height="24" />
               </div>
               <div class="familiar-compare__frame familiar-compare__frame--good">
-                <img src="./img/01-text-good.webp" alt="Пример аккуратного блока с текстом" />
+                <img loading="lazy" decoding="async" src="./img/01-text-good.webp" alt="Пример аккуратного блока с текстом" />
               </div>
             </div>
           </div>
@@ -363,19 +381,19 @@
             <div class="familiar-compare">
               <div class="familiar-compare__label familiar-compare__label--bad">
                 Плохо
-                <img src="./img/tab-bad.svg" alt="" width="24" height="24" />
+                <img loading="lazy" decoding="async" src="./img/tab-bad.svg" alt="" width="24" height="24" />
               </div>
               <div class="familiar-compare__frame familiar-compare__frame--bad">
-                <img src="./img/form-bad.webp" alt="Пример неудобной формы заявки" />
+                <img loading="lazy" decoding="async" src="./img/form-bad.webp" alt="Пример неудобной формы заявки" />
               </div>
             </div>
             <div class="familiar-compare">
               <div class="familiar-compare__label familiar-compare__label--good">
                 Хорошо
-                <img src="./img/tab-good.svg" alt="" width="24" height="24" />
+                <img loading="lazy" decoding="async" src="./img/tab-good.svg" alt="" width="24" height="24" />
               </div>
               <div class="familiar-compare__frame familiar-compare__frame--good">
-                <img src="./img/form-good.webp" alt="Пример удобной формы заявки" />
+                <img loading="lazy" decoding="async" src="./img/form-good.webp" alt="Пример удобной формы заявки" />
               </div>
             </div>
           </div>
@@ -398,19 +416,19 @@
             <div class="familiar-compare">
               <div class="familiar-compare__label familiar-compare__label--bad">
                 Плохо
-                <img src="./img/tab-bad.svg" alt="" width="24" height="24" />
+                <img loading="lazy" decoding="async" src="./img/tab-bad.svg" alt="" width="24" height="24" />
               </div>
               <div class="familiar-compare__frame familiar-compare__frame--bad">
-                <img src="./img/02-footer-bad.webp" alt="Пример устаревшего года в подвале" />
+                <img loading="lazy" decoding="async" src="./img/02-footer-bad.webp" alt="Пример устаревшего года в подвале" />
               </div>
             </div>
             <div class="familiar-compare">
               <div class="familiar-compare__label familiar-compare__label--good">
                 Хорошо
-                <img src="./img/tab-good.svg" alt="" width="24" height="24" />
+                <img loading="lazy" decoding="async" src="./img/tab-good.svg" alt="" width="24" height="24" />
               </div>
               <div class="familiar-compare__frame familiar-compare__frame--good">
-                <img src="./img/02-footer-good.webp" alt="Пример актуального года в подвале" />
+                <img loading="lazy" decoding="async" src="./img/02-footer-good.webp" alt="Пример актуального года в подвале" />
               </div>
             </div>
           </div>
@@ -433,19 +451,19 @@
             <div class="familiar-compare">
               <div class="familiar-compare__label familiar-compare__label--bad">
                 Плохо
-                <img src="./img/tab-bad.svg" alt="" width="24" height="24" />
+                <img loading="lazy" decoding="async" src="./img/tab-bad.svg" alt="" width="24" height="24" />
               </div>
               <div class="familiar-compare__frame familiar-compare__frame--bad">
-                <img src="./img/03-design-bad.webp" alt="Пример устаревшего дизайна" />
+                <img loading="lazy" decoding="async" src="./img/03-design-bad.webp" alt="Пример устаревшего дизайна" />
               </div>
             </div>
             <div class="familiar-compare">
               <div class="familiar-compare__label familiar-compare__label--good">
                 Хорошо
-                <img src="./img/tab-good.svg" alt="" width="24" height="24" />
+                <img loading="lazy" decoding="async" src="./img/tab-good.svg" alt="" width="24" height="24" />
               </div>
               <div class="familiar-compare__frame familiar-compare__frame--good">
-                <img src="./img/03-design-good.webp" alt="Пример современного дизайна" />
+                <img loading="lazy" decoding="async" src="./img/03-design-good.webp" alt="Пример современного дизайна" />
               </div>
             </div>
           </div>
@@ -468,19 +486,19 @@
             <div class="familiar-compare">
               <div class="familiar-compare__label familiar-compare__label--bad">
                 Плохо
-                <img src="./img/tab-bad.svg" alt="" width="24" height="24" />
+                <img loading="lazy" decoding="async" src="./img/tab-bad.svg" alt="" width="24" height="24" />
               </div>
               <div class="familiar-compare__frame familiar-compare__frame--bad">
-                <img src="./img/04-style-bad.webp" alt="Пример отсутствия стиля" />
+                <img loading="lazy" decoding="async" src="./img/04-style-bad.webp" alt="Пример отсутствия стиля" />
               </div>
             </div>
             <div class="familiar-compare">
               <div class="familiar-compare__label familiar-compare__label--good">
                 Хорошо
-                <img src="./img/tab-good.svg" alt="" width="24" height="24" />
+                <img loading="lazy" decoding="async" src="./img/tab-good.svg" alt="" width="24" height="24" />
               </div>
               <div class="familiar-compare__frame familiar-compare__frame--good">
-                <img src="./img/04-style-good.webp" alt="Пример единого стиля" />
+                <img loading="lazy" decoding="async" src="./img/04-style-good.webp" alt="Пример единого стиля" />
               </div>
             </div>
           </div>
@@ -503,19 +521,19 @@
             <div class="familiar-compare">
               <div class="familiar-compare__label familiar-compare__label--bad">
                 Плохо
-                <img src="./img/tab-bad.svg" alt="" width="24" height="24" />
+                <img loading="lazy" decoding="async" src="./img/tab-bad.svg" alt="" width="24" height="24" />
               </div>
               <div class="familiar-compare__frame familiar-compare__frame--bad">
-                <img src="./img/05-buttons-bad.webp" alt="Пример мелких кнопок и иконок" />
+                <img loading="lazy" decoding="async" src="./img/05-buttons-bad.webp" alt="Пример мелких кнопок и иконок" />
               </div>
             </div>
             <div class="familiar-compare">
               <div class="familiar-compare__label familiar-compare__label--good">
                 Хорошо
-                <img src="./img/tab-good.svg" alt="" width="24" height="24" />
+                <img loading="lazy" decoding="async" src="./img/tab-good.svg" alt="" width="24" height="24" />
               </div>
               <div class="familiar-compare__frame familiar-compare__frame--good">
-                <img src="./img/05-buttons-good.webp" alt="Пример крупных кнопок и иконок" />
+                <img loading="lazy" decoding="async" src="./img/05-buttons-good.webp" alt="Пример крупных кнопок и иконок" />
               </div>
             </div>
           </div>
@@ -538,19 +556,19 @@
             <div class="familiar-compare">
               <div class="familiar-compare__label familiar-compare__label--bad">
                 Плохо
-                <img src="./img/tab-bad.svg" alt="" width="24" height="24" />
+                <img loading="lazy" decoding="async" src="./img/tab-bad.svg" alt="" width="24" height="24" />
               </div>
               <div class="familiar-compare__frame familiar-compare__frame--bad">
-                <img src="./img/06-video-bad.webp" alt="Пример неработающего видео" />
+                <img loading="lazy" decoding="async" src="./img/06-video-bad.webp" alt="Пример неработающего видео" />
               </div>
             </div>
             <div class="familiar-compare">
               <div class="familiar-compare__label familiar-compare__label--good">
                 Хорошо
-                <img src="./img/tab-good.svg" alt="" width="24" height="24" />
+                <img loading="lazy" decoding="async" src="./img/tab-good.svg" alt="" width="24" height="24" />
               </div>
               <div class="familiar-compare__frame familiar-compare__frame--good">
-                <img src="./img/06-video-good.webp" alt="Пример работающего видео" />
+                <img loading="lazy" decoding="async" src="./img/06-video-good.webp" alt="Пример работающего видео" />
               </div>
             </div>
           </div>
@@ -573,19 +591,19 @@
             <div class="familiar-compare">
               <div class="familiar-compare__label familiar-compare__label--bad">
                 Плохо
-                <img src="./img/tab-bad.svg" alt="" width="24" height="24" />
+                <img loading="lazy" decoding="async" src="./img/tab-bad.svg" alt="" width="24" height="24" />
               </div>
               <div class="familiar-compare__frame familiar-compare__frame--bad">
-                <img src="./img/07-logo-bad.webp" alt="Пример устаревшего логотипа" />
+                <img loading="lazy" decoding="async" src="./img/07-logo-bad.webp" alt="Пример устаревшего логотипа" />
               </div>
             </div>
             <div class="familiar-compare">
               <div class="familiar-compare__label familiar-compare__label--good">
                 Хорошо
-                <img src="./img/tab-good.svg" alt="" width="24" height="24" />
+                <img loading="lazy" decoding="async" src="./img/tab-good.svg" alt="" width="24" height="24" />
               </div>
               <div class="familiar-compare__frame familiar-compare__frame--good">
-                <img src="./img/07-logo-good.webp" alt="Пример современного логотипа" />
+                <img loading="lazy" decoding="async" src="./img/07-logo-good.webp" alt="Пример современного логотипа" />
               </div>
             </div>
           </div>
@@ -595,7 +613,7 @@
   </section>
 
   <!-- rework -->
-  <section id="about" class="rework section">
+  <section id="rework" class="rework section">
     <div class="container">
       <h2 class="rework__title">Не каждый сайт нужно делать заново</h2>
       <p class="rework__subtitle">
@@ -658,13 +676,13 @@
         <div class="rework__banner-subtitle">
           Ваш сайт станет лучше без лишних затрат и долгих разработок.
         </div>
-        <button class="btn btn--primary">Связаться с нами</button>
+        <a class="btn btn--primary" href="#request">Связаться с нами</a>
       </div>
     </div>
   </section>
 
   <!-- profit -->
-  <section id="services" class="profit section">
+  <section id="profit" class="profit section">
     <div class="container">
       <h2 class="profit__title">Ошибки сайта = потеря прибыли</h2>
 
@@ -676,7 +694,7 @@
             не дожидаются загрузки, не могут найти кнопку заказа или нужную им информацию. Деньги улетают в трубу.
           </p>
           <div class="profit-card__img">
-            <img src="./img/img-reason-6.webp" alt="">
+            <img loading="lazy" decoding="async" src="./img/img-reason-6.webp" alt="">
           </div>
         </div>
         <div class="profit-card">
@@ -687,7 +705,7 @@
             и дешёвой графикой, ваш продукт автоматически будет восприниматься пользователями как низкосортный.
           </p>
           <div class="profit-card__img">
-            <img src="./img/img-reason-5.webp" alt="">
+            <img loading="lazy" decoding="async" src="./img/img-reason-5.webp" alt="">
           </div>
         </div>
         <div class="profit-card">
@@ -698,7 +716,7 @@
             совершить повторную покупку.
           </p>
           <div class="profit-card__img">
-            <img src="./img/img-reason-4.webp" alt="">
+            <img loading="lazy" decoding="async" src="./img/img-reason-4.webp" alt="">
           </div>
         </div>
         <div class="profit-card">
@@ -708,7 +726,7 @@
             Он закроет вкладку и уйдёт на аккуратный, быстрый сайт конкурента, где все покупается в один клик.
           </p>
           <div class="profit-card__img">
-            <img src="./img/img-reason-3.webp" alt="">
+            <img loading="lazy" decoding="async" src="./img/img-reason-3.webp" alt="">
           </div>
         </div>
         <div class="profit-card">
@@ -719,7 +737,7 @@
             платёжеспособной аудитории.
           </p>
           <div class="profit-card__img">
-            <img src="./img/img-reason-2.webp" alt="">
+            <img loading="lazy" decoding="async" src="./img/img-reason-2.webp" alt="">
           </div>
         </div>
         <div class="profit-card">
@@ -730,7 +748,7 @@
             в мессенджеры. Вы платите сотруднику за рутину, которую должен делать сайт.
           </p>
           <div class="profit-card__img">
-            <img src="./img/img-reason-1.webp" alt="">
+            <img loading="lazy" decoding="async" src="./img/img-reason-1.webp" alt="">
           </div>
         </div>
       </div>
@@ -738,7 +756,7 @@
   </section>
 
   <!-- steps -->
-  <section id="contacts" class="steps section">
+  <section id="steps" class="steps section">
     <div class="container-small">
       <h2 class="steps__title">Этапы работы с нами</h2>
 
@@ -749,7 +767,7 @@
             <p class="step-card__text">Изучаем сайт, находим ошибки и согласуем с вами список необходимых доработок, сроки и стоимость до начала работ.</p>
           </div>
           <div class="step-card__icon">
-            <img src="./img/Search-icon.svg" alt="">
+            <img loading="lazy" decoding="async" src="./img/Search-icon.svg" alt="">
           </div>
         </li>
         <li class="step-card">
@@ -758,16 +776,16 @@
             <p class="step-card__text">Обсуждаем приоритеты и подбираем решение под вашу задачу. Если нужно, подготовим варианты текста и дизайна до внесения изменений.</p>
           </div>
           <div class="step-card__icon">
-            <img src="./img/Image-icon.svg" alt="">
+            <img loading="lazy" decoding="async" src="./img/Image-icon.svg" alt="">
           </div>
         </li>
         <li class="step-card">
           <div class="step-card__body">
             <h3 class="step-card__heading"><span class="step-card__num">( 03 )</span> Доработка сайта</h3>
-            <p class="step-card__text">Вносим согласованные изменения в код и контент, сохраняя работоспособность сайта и его существующий стиль.</p>
+            <p class="step-card__text">Вносим согласованные изменения в код и контент, сохраняя работоспособность сайта и его стиль.</p>
           </div>
           <div class="step-card__icon">
-            <img src="./img/Code-icon.svg" alt="">
+            <img loading="lazy" decoding="async" src="./img/Code-icon.svg" alt="">
           </div>
         </li>
         <li class="step-card">
@@ -776,7 +794,7 @@
             <p class="step-card__text">Проверяем результат на компьютерах и смартфонах, исправляем обнаруженные недочёты и передаём вам готовые изменения.</p>
           </div>
           <div class="step-card__icon">
-            <img src="./img/lucide_rocket.svg" alt="">
+            <img loading="lazy" decoding="async" src="./img/lucide_rocket.svg" alt="">
           </div>
         </li>
       </ol>
@@ -789,8 +807,8 @@
             <p class="cta__text">Бесплатно найдем 3 ошибки: выявим ключевые недочёты в дизайне, вёрстке или скорости
               работы и покажем как их можно исправить.</p>
             <div class="cta__buttons">
-              <button class="btn btn--primary">Оставить заявку</button>
-              <button class="btn btn--outline">Бесплатный аудит</button>
+              <a class="btn btn--primary" href="#request">Получить бесплатный аудит</a>
+              <a class="btn btn--outline" href="#examples">Посмотреть примеры</a>
             </div>
           </div>
         </div>
@@ -800,15 +818,14 @@
   </section>
 
   <!-- why -->
-  <section class="why section">
+  <section id="why" class="why section">
     <div class="container">
       <div class="why__grid">
         <div class="why-lead">
           <h2 class="why-lead__title">Почему<br />выбирают нас</h2>
           <p class="why-lead__text">
             <strong>100+ довольных клиентов</strong> уже выбрали нас. <br> <br>
-            Мы оказываем поддержку после сдачи работы и остаёмся всегда на связи. При необходимости можем оказывать
-            поддержку на постоянной основе за отдельную плату.
+            Остаёмся <strong>на связи в любое время</strong>, в том числе после сдачи работы.
           </p>
         </div>
 
@@ -819,13 +836,13 @@
             настроили отступы или ускорили код. Большинство точечных правок сдаём в день обращения.
           </p>
           <div class="why-card__media">
-            <img src="./img/why-we-1.webp" alt="">
+            <img loading="lazy" decoding="async" src="./img/why-we-1.webp" alt="">
           </div>
         </div>
 
         <div class="why-card">
           <div class="why-card__media">
-            <img src="./img/why-we-2.webp" alt="">
+            <img loading="lazy" decoding="async" src="./img/why-we-2.webp" alt="">
           </div>
           <h3 class="why-card__title">Без переплат<br />за новый сайт</h3>
           <p class="why-card__text">
@@ -836,7 +853,7 @@
 
         <div class="why-card">
           <div class="why-card__media">
-            <img src="./img/why-we-3.webp" alt="">
+            <img loading="lazy" decoding="async" src="./img/why-we-3.webp" alt="">
           </div>
           <h3 class="why-card__title">Не мучаем вас<br />техзаданиями</h3>
           <p class="why-card__text">
@@ -852,13 +869,13 @@
             переплат или внезапных наценок. Вы платите только за конкретный результат.
           </p>
           <div class="why-card__media">
-            <img src="./img/why-we-4.webp" alt="">
+            <img loading="lazy" decoding="async" src="./img/why-we-4.webp" alt="">
           </div>
         </div>
 
         <div class="why-card">
           <div class="why-card__media">
-            <img src="./img/why-we-5.webp" alt="">
+            <img loading="lazy" decoding="async" src="./img/why-we-5.webp" alt="">
           </div>
           <h3 class="why-card__title">Синергия кода<br />и дизайна</h3>
           <p class="why-card__text">
@@ -871,7 +888,7 @@
   </section>
 
   <!-- pricing -->
-  <section class="pricing section">
+  <section id="pricing" class="pricing section">
     <div class="container">
       <h2 class="pricing__title">Стоимость доработки сайта</h2>
 
@@ -942,7 +959,7 @@
             <li>Комплексное улучшение UX/UI</li>
             <li>Глубокая оптимизация скорости</li>
             <li>Разработка новых функций</li>
-            <li>Долгосрочная поддержка</li>
+            <li>На связи в любое время</li>
           </ul>
           <p class="price-card__note">
             Подходит: если сайт требует серьёзного обновления, а не отдельных
@@ -963,9 +980,9 @@
           </ul>
           <p class="pricing__audit-text mt-a">Пришлите ссылку на ваш сайт.</p>
 
-          <button class="btn btn--primary pricing__audit-btn">
+          <a class="btn btn--primary pricing__audit-btn" href="#request">
             Получить аудит
-          </button>
+          </a>
         </div>
       </div>
       <div class="pricing__small-task">
@@ -977,7 +994,7 @@
   </section>
 
   <!-- faq -->
-  <section class="faq section">
+  <section id="faq" class="faq section">
     <div class="container">
       <h2 class="faq__title">Вопросы и ответы</h2>
 
@@ -1039,7 +1056,7 @@
   </section>
 
   <!-- request form -->
-  <section class="request section">
+  <section id="request" class="request section">
     <div class="container">
       <div class="request__inner">
         <div class="request-card request-card--info">
@@ -1049,7 +1066,7 @@
           <p class="request__includes">Весь экспресс-аудит сайта включает:</p>
           <ul class="request__list">
             <li><strong>Поиск ошибок:</strong> выявим ключевые недочёты в дизайне, вёрстке и скорости работы.</li>
-            <li><strong>Наглядную демонстрацию:</strong> покажем и объясним понятным языком, как исправить эти ошибки.
+            <li><strong>Наглядную демонстрацию:</strong> покажем и объясним понятным языком, как исправить эти ошибки. Вы сможете увидеть, как может выглядеть ваш сайт с обновлённым дизайном.
             </li>
           </ul>
           <p class="request__note-top">Так же можете написать нам сами, мы всегда на связи!</p>
@@ -1136,7 +1153,7 @@
       <div class="footer__top">
         <div class="footer__col">
           <a href="/" class="footer__logo">
-            <img src="./img/uikit-logo-footer.svg" alt="UI-KIT" />
+            <img loading="lazy" decoding="async" src="./img/uikit-logo-footer.svg" alt="UI-KIT" />
           </a>
           <p class="footer__desc">
             Исправляем ошибки на сайтах, ускоряем загрузку, делаем интерфейс
@@ -1146,13 +1163,13 @@
           <p class="footer__hours">с 9:00 до 18:00 по МСК</p>
         </div>
         <nav class="footer__nav">
-          <a href="#about">Какие проблемы решаем</a>
-          <a href="#services">Типичные ошибки сайта</a>
-          <a href="#contacts">Почему теряете прибыль</a>
-          <a href="#contacts">Этапы работы</a>
-          <a href="#contacts">Почему выбирают нас</a>
-          <a href="#contacts">Стоимость</a>
-          <a href="#contacts">Вопросы</a>
+          <a href="#problems">Какие проблемы решаем</a>
+          <a href="#examples">Типичные ошибки сайта</a>
+          <a href="#profit">Почему теряете прибыль</a>
+          <a href="#steps">Этапы работы</a>
+          <a href="#why">Почему выбирают нас</a>
+          <a href="#pricing">Стоимость</a>
+          <a href="#faq">Вопросы</a>
         </nav>
         <div class="footer__contacts">
           <h3 class="footer__contacts-title">Контакты</h3>

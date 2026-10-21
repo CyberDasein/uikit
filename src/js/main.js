@@ -146,16 +146,6 @@ reworkFrames.forEach((frame) => {
   frame.addEventListener("pointermove", updateLens);
 });
 
-// Пример: плавный скролл по анкорам
-document.querySelectorAll('a[href^="#"]').forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    document.querySelector(link.getAttribute("href"))?.scrollIntoView({
-      behavior: "smooth",
-    });
-  });
-});
-
 // Табы способа связи в форме заявки:
 // динамическое поле меняется в зависимости от выбранного способа
 const requestTabs = document.querySelectorAll(".request__tab");
