@@ -70,7 +70,7 @@ body {}
       max-width: 130px;
       animation: riseUp 3.5s cubic-bezier(0.22, 1, 0.36, 1) both;
 
-      @media (max-width: $container-max) {
+      @media (max-width: 1440px) {
         max-width: 110px;
       }
 

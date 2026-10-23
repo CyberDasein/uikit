@@ -1,5 +1,6 @@
 import "../scss/main.scss";
 import "./animation"
+import "./mobile-sliders";
 
 // Мобильное меню header
 const headerInner = document.querySelector(".header__inner");
@@ -55,10 +56,14 @@ familiarCompares.forEach((compare) => {
 
   if (!familiarMobile.matches) return;
 
+  const labels = document.createElement("div");
+  labels.className = "familiar-compare__labels";
+  labels.append(badLabel, goodLabel);
+
   const stage = document.createElement("div");
   stage.className = "familiar-compare__stage";
   stage.style.setProperty("--split", "50%");
-  stage.append(badFrame, goodFrame, badLabel, goodLabel);
+  stage.append(badFrame, goodFrame);
 
   const divider = document.createElement("div");
   divider.className = "familiar-compare__divider";
@@ -77,7 +82,7 @@ familiarCompares.forEach((compare) => {
     stage.style.setProperty("--split", `${slider.value}%`);
   });
   stage.append(slider);
-  compare.append(stage);
+  compare.append(labels, stage);
 });
 
 // Ползунок сравнения «До / После» в мобильной версии блока rework

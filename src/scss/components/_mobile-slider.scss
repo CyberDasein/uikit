@@ -1,0 +1,70 @@
+@use '../abstracts/variables' as *;
+
+.mobile-slider__dots {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-slider {
+    display: flex;
+    gap: 16px;
+    align-items: stretch;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    > .profit-card,
+    > .why-card {
+      flex: 0 0 100%;
+      min-width: 0;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+  }
+
+  .why .container > .why-lead {
+    margin-bottom: 28px;
+    padding-right: 0;
+  }
+
+  .mobile-slider__dots:not([hidden]) {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+  .mobile-slider__dot {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: $palette-lavender-light;
+    }
+
+    &[aria-current='true']::before {
+      background: $palette-blue;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $palette-blue;
+      outline-offset: -2px;
+      border-radius: 50%;
+    }
+  }
+}

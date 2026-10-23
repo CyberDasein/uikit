@@ -109,6 +109,14 @@
     font-family: $font-main;
     font-weight: 500;
     margin-right: 16px;
+
+    &::before {
+      content: '( ';
+    }
+
+    &::after {
+      content: ' )';
+    }
   }
 
   &__text {
