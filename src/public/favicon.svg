@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
-  <rect width="64" height="64" rx="16" fill="#F0F1F5"/>
+  <rect width="64" height="64" rx="16" fill="#1E1E1E"/>
   <g transform="translate(-63 -2) scale(1.5)">
     <path d="M70.0228 11.2393L60.9499 32.9513L57.7157 22.4461L47.5586 18.2453L70.0228 11.2393Z" fill="#70E9FF"/>
     <path d="M79.4526 12.8296L70.3797 34.5415L67.1456 24.0365L56.9883 19.8355L79.4526 12.8296Z" fill="url(#brand)"/>
@@ -7,7 +7,7 @@
   <defs>
     <linearGradient id="brand" x1="66.3267" y1="24.1675" x2="75.3895" y2="16.2177" gradientUnits="userSpaceOnUse">
       <stop stop-color="#70E9FF"/>
-      <stop offset="1" stop-color="#015AFF"/>
+      <stop offset="1" stop-color="#3D8BFF"/>
     </linearGradient>
   </defs>
 </svg>
